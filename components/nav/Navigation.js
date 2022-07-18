@@ -1,4 +1,4 @@
-import NavComp from "../ui/nav-comp";
+import NavComp from "../ui/nav-comps/nav-comp";
 
 const Navigation = (props) => {
   const items = [

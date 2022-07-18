@@ -1,7 +1,10 @@
+import Hero from "../components/hero/Hero";
+
 export default function Home() {
   return (
     <div>
-      <h2 className="font-bold text-lg">Hello I'm here</h2>
+      <Hero />
+      <div className="scroller h-48" />
       {/* Homepage */}
       {/* HeroPage */}
       {/* Features (ideas-design-code) */}

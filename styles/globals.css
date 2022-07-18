@@ -18,3 +18,11 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.socials svg:hover {
+  @apply text-secondary scale-125;
+}
+
+.socials svg:active {
+  @apply text-secondary scale-95;
+}

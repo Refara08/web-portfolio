@@ -25,7 +25,7 @@ const Backdrop = (props) => {
   return (
     <div
       ref={backdropRef}
-      className="fixed top-0 left-0 w-full h-screen z-20 bg-black bg-opacity-75"
+      className="fixed lg:hidden top-0 left-0 w-full h-screen -z-20 bg-black bg-opacity-75"
       onClick={props.onClose}
     />
   );
@@ -53,7 +53,7 @@ const ModalOverlay = (props) => {
   return (
     <div
       ref={overlayRef}
-      className="fixed top-0 right-0 w-full md:w-2/5 lg:w-[400px] z-30"
+      className="fixed lg:hidden top-0 right-0 w-full md:w-2/5 lg:w-[400px] -z-30"
     >
       <div>{props.children}</div>
     </div>
