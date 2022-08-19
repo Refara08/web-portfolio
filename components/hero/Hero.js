@@ -29,6 +29,7 @@ const Hero = (props) => {
   return (
     <div
       ref={heroRef}
+      id="hero"
       className="w-full flex flex-col lg:flex-row justify-between gap-6 lg:gap-0"
     >
       <div className="hero-content flex flex-col justify-between pt-4 lg:pt-12 px-12 pb-4 gap-16 flex-[1]">
@@ -37,7 +38,7 @@ const Hero = (props) => {
       </div>
       <div className="hero-image w-fit aspect-square m-auto px-4">
         <Image
-          src={"/image/hero-pict-grayscale.jpg"}
+          src={"/images/hero/hero-pict-grayscale.jpg"}
           width={"650px"}
           height={"650px"}
           alt={"picture of the author"}

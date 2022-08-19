@@ -11,6 +11,7 @@ import SideNav from "./side-nav-comp";
 const NavComp = (props) => {
   const { logo, navItems, width, ratio } = props;
   const [isOpen, setOpen] = useState(false);
+  console.log(navItems);
 
   const burgerRef = useRef();
   const navChildRef = useRef();
@@ -39,11 +40,11 @@ const NavComp = (props) => {
   return (
     <div
       ref={navChildRef}
-      className={`flex justify-between items-center p-8 bg-primary text-txt-prime
+      className={`flex justify-between items-center px-8 pt-12 pb-2 bg-primary text-txt-prime sticky top-0 z-20
       `}
     >
       <div className="pl-4 nav-child">
-        <Link href="/">
+        <Link href="/#hero">
           <a>
             <Image
               src={logo}
@@ -55,11 +56,11 @@ const NavComp = (props) => {
       </div>
       <nav>
         <ul className="flex justify-center items-center gap-4">
-          {navItems.map((item) => (
-            <li className="hidden lg:block nav-child" key={item}>
-              <Link href="/" scroll={false}>
+          {navItems.map((item, index) => (
+            <li className="hidden lg:block nav-child" key={index}>
+              <Link href={item.link} scroll={false}>
                 <a className="relative z-10 px-4 pt-2 before:absolute before:block before:bottom-0 before:bg-white before:w-full before:h-0 before:transition-all before:duration-300 before:-z-10 before:hover:h-full hover:text-primary">
-                  {item}
+                  {item.placeholder}
                 </a>
               </Link>
             </li>

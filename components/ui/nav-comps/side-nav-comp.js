@@ -27,10 +27,10 @@ const SideNav = (props) => {
           <Hamburger toggled={isOpen} toggle={setOpen} size={25} />
         </li>
         {navItems.map((item) => (
-          <li className="block" key={item}>
-            <Link href="/" scroll={false}>
+          <li className="block" key={item.placeholder} onClick={onClose}>
+            <Link href={item.link} scroll={false}>
               <a className="text-3xl relative z-10 pr-2 pl-6 py-1 before:absolute before:block before:right-0 before:bottom-1/2 before:translate-y-1/2 before:bg-white before:h-full before:w-0 before:transition-all before:duration-300 before:-z-10 before:hover:w-full hover:text-primary">
-                {item}
+                {item.placeholder}
               </a>
             </Link>
           </li>
