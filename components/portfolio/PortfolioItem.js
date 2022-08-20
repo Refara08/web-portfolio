@@ -1,17 +1,34 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { useState } from "react";
+
+import Eye from "../ui/jsx/Eye";
+
 const PortfolioItem = (props) => {
+  const [isHover, setIsHover] = useState(false);
   const { title, image, slug, desc, tags } = props.portfolio;
 
   const detailPageLink = `/portfolios/${slug}`;
   const imageLink = `/images/portfolios/${slug}/${image}`;
 
+  const mouseIsHovering = () => {
+    setIsHover(true);
+  };
+
+  const mouseLeaving = () => {
+    setIsHover(false);
+  };
+
   return (
-    <li className="rounded-xl overflow-hidden bg-primary-2 hover:scale-105 active:scale-95 duration-300 cursor-pointer">
+    <li
+      onMouseEnter={mouseIsHovering}
+      onMouseLeave={mouseLeaving}
+      className="rounded-xl overflow-hidden bg-primary-2 hover:scale-105 active:scale-95 duration-300 cursor-pointer"
+    >
       <Link href={detailPageLink}>
         <a>
-          <div>
+          <div className="relative">
             <div>
               <Image
                 src={imageLink}
@@ -21,16 +38,15 @@ const PortfolioItem = (props) => {
                 layout={"responsive"}
               />
             </div>
-            <div className="p-6 pb-12 flex flex-col gap-4">
-              <h1 className="text-3xl font-semibold">{title}</h1>
-              <ul className="flex gap-2">
-                {tags.map((tag) => (
-                  <li className="bg-white text-primary rounded-full text-xs font-bold py-1 px-2">
-                    {tag}
-                  </li>
-                ))}
-              </ul>
-              <p>{desc}</p>
+            <div
+              className={`absolute bottom-0 w-full px-6 pt-4 pb-6 bg-black bg-opacity-90 transition-all duration-500 flex justify-between items-center ${
+                isHover
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-20 opacity-0"
+              }`}
+            >
+              <h1 className="text-2xl fonts-semibold">{title}</h1>
+              <Eye />
             </div>
           </div>
         </a>

@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Navigation from "../nav/Navigation";
+import Footer from "../footer/Footer";
 
 const Layout = (props) => {
   return (
@@ -15,11 +16,7 @@ const Layout = (props) => {
         <div className="container mx-auto ">
           <Navigation />
           <main className="flex-[1]">{props.children}</main>
-          <footer>
-            <div>
-              <h2>this is footer</h2>
-            </div>
-          </footer>
+          <Footer />
         </div>
       </div>
     </>

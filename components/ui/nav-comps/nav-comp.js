@@ -11,7 +11,6 @@ import SideNav from "./side-nav-comp";
 const NavComp = (props) => {
   const { logo, navItems, width, ratio } = props;
   const [isOpen, setOpen] = useState(false);
-  console.log(navItems);
 
   const burgerRef = useRef();
   const navChildRef = useRef();
@@ -44,7 +43,7 @@ const NavComp = (props) => {
       `}
     >
       <div className="pl-4 nav-child">
-        <Link href="/#hero">
+        <Link href="/">
           <a>
             <Image
               src={logo}

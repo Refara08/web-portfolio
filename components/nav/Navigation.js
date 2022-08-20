@@ -2,7 +2,7 @@ import NavComp from "../ui/nav-comps/nav-comp";
 
 const Navigation = (props) => {
   const items = [
-    { placeholder: "Home", link: "/#hero" },
+    // { placeholder: "Home", link: "/" },
     { placeholder: "Skills", link: "/#skilks" },
     { placeholder: "Portfolios", link: "/#portfolios" },
     { placeholder: "About Me", link: "/#about-me" },
