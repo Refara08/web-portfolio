@@ -16,8 +16,8 @@ const Layout = (props) => {
         <div className="container mx-auto ">
           <Navigation />
           <main className="flex-[1]">{props.children}</main>
-          <Footer />
         </div>
+        <Footer />
       </div>
     </>
   );

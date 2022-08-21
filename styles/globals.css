@@ -30,3 +30,16 @@ a {
 .socials svg:active {
   @apply text-secondary scale-95;
 }
+
+.input-group {
+  @apply flex flex-col mb-4;
+}
+
+.input-group label {
+  @apply mb-1;
+}
+
+.input-group input,
+.input-group textarea {
+  @apply bg-primary py-2 px-4;
+}

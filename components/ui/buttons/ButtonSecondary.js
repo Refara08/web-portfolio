@@ -1,10 +1,11 @@
 import { forwardRef } from "react";
 
 const ButtonSecondary = forwardRef((props, ref) => {
-  const { specialStyle, onHover, onLeave, href } = props;
+  const { onHover, onLeave, href, target } = props;
 
   return (
     <a
+      target={target}
       href={href}
       ref={ref}
       onMouseOver={onHover}

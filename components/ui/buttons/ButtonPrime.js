@@ -1,10 +1,11 @@
 import { forwardRef } from "react";
 
 const ButtonPrime = forwardRef((props, ref) => {
-  const { specialStyle, onHover, onLeave, href } = props;
+  const { specialStyle, onHover, onLeave, href, target } = props;
 
   return (
     <a
+      target={target}
       href={href}
       ref={ref}
       onMouseOver={onHover}

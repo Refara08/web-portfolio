@@ -1,12 +1,17 @@
 import Hero from "../components/hero/Hero";
 import Portfolio from "../components/portfolio/Portfolio";
+import Skills from "../components/skills/Skills";
 
 import { getAllPost } from "../lib/post-utils";
+import { getAllSkillIcons } from "../components/skills/skills-helper";
 
 export default function Home(props) {
+  const allIcons = getAllSkillIcons();
+
   return (
     <div>
       <Hero />
+      <Skills icons={allIcons} />
       <Portfolio portfolioList={props.posts} />
       {/* Projects */}
 
