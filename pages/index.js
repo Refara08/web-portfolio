@@ -1,6 +1,7 @@
 import Hero from "../components/hero/Hero";
 import Portfolio from "../components/portfolio/Portfolio";
 import Skills from "../components/skills/Skills";
+import Services from "../components/services/Services";
 
 import { getAllPost } from "../lib/post-utils";
 import { getAllSkillIcons } from "../components/skills/skills-helper";
@@ -11,11 +12,12 @@ export default function Home(props) {
   return (
     <div>
       <Hero />
+      <Services />
       <Skills icons={allIcons} />
       <Portfolio portfolioList={props.posts} />
+
       {/* Projects */}
 
-      <div className="scroller h-48" />
       {/* Features (ideas-design-code) */}
 
       {/* Aboutme Page */}

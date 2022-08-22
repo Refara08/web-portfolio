@@ -1,16 +1,12 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 
 import Link from "next/link";
-
-import gsap from "gsap";
 
 import ButtonPrime from "../ui/buttons/ButtonPrime";
 import ArrowRight from "../ui/jsx/arrow-right";
 
 const HeroContent = () => {
   const [isHover, setHover] = useState(false);
-  const arrowRef = useRef();
-  const tl = useRef();
 
   const hoverHandler = () => {
     setHover(true);
@@ -19,34 +15,6 @@ const HeroContent = () => {
   const leaveHandler = () => {
     setHover(false);
   };
-
-  useEffect(() => {
-    if (isHover) {
-      tl.current = gsap
-        .timeline()
-        .fromTo(arrowRef.current, { display: "none" }, { display: "block" })
-        .fromTo(
-          arrowRef.current,
-          { opacity: 0, xPercent: -100 },
-          { opacity: 1, xPercent: 0, duration: 0.5 },
-          "<"
-        );
-    } else {
-      tl.current = gsap
-        .timeline()
-        .fromTo(
-          arrowRef.current,
-          { opacity: 1, xPercent: 0 },
-          { opacity: 0, xPercent: -100, duration: 0.1 }
-        )
-        .fromTo(
-          arrowRef.current,
-          { display: "block" },
-          { display: "none" },
-          "<-=1.6"
-        );
-    }
-  }, [isHover]);
 
   return (
     <div>
@@ -64,9 +32,15 @@ const HeroContent = () => {
           specialStyle={"flex items-center gap-4 w-fit hero-button"}
         >
           <span>See projects</span>
-          <span ref={arrowRef} className="hidden">
+          <div
+            className={`transition-all duration-300 ${
+              isHover
+                ? "block translate-x-0 opacity-100"
+                : "hidden -translate-x-10 opacity-0"
+            }`}
+          >
             <ArrowRight />
-          </span>
+          </div>
         </ButtonPrime>
       </Link>
     </div>

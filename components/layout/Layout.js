@@ -3,6 +3,7 @@ import Navigation from "../nav/Navigation";
 import Footer from "../footer/Footer";
 
 const Layout = (props) => {
+  const { navItems } = props;
   return (
     <>
       <Head>
@@ -14,7 +15,7 @@ const Layout = (props) => {
       </Head>
       <div className={`bg-primary text-txt-prime`}>
         <div className="container mx-auto ">
-          <Navigation />
+          <Navigation items={navItems} />
           <main className="flex-[1]">{props.children}</main>
         </div>
         <Footer />
