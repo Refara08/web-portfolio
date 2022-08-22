@@ -24,7 +24,7 @@ const Hero = (props) => {
         { xPercent: 0, opacity: 1 },
         "<"
       );
-  }, []);
+  }, [q]);
 
   return (
     <div

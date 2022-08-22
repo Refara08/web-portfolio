@@ -18,7 +18,7 @@ const HeroContent = () => {
 
   return (
     <div>
-      <p className="text-secondary text-xl pl-2">Hello, I'm</p>
+      <p className="text-secondary text-xl pl-2">Hello, I&apos;m</p>
       <h1 className="w-min text-6xl md:text-8xl 2xl:text-9xl font-bold">
         Gema Refantero
       </h1>

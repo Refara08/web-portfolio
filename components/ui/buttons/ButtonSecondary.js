@@ -17,4 +17,6 @@ const ButtonSecondary = forwardRef((props, ref) => {
   );
 });
 
+ButtonSecondary.displayName = "ButtonSecondary";
+
 export default ButtonSecondary;

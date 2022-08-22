@@ -15,7 +15,7 @@ const SideNav = (props) => {
     if (isOpen) {
       gsap.fromTo(q("li"), { xPercent: 500 }, { xPercent: 0, stagger: 0.075 });
     }
-  }, [isOpen]);
+  }, [isOpen, q]);
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
