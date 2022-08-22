@@ -1,5 +1,6 @@
 ---
 title: "Weather Web App"
+topic: "Web Design and Web Development"
 image: "weatherapp.png"
 desc: "A Weather website application using openweathermap API, and unsplash API Hungray is a restaurant non quam lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit amet consectetur adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla facilisi nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus et netus et malesuada"
 tags: ["HTML5", "CSS"]

@@ -4,6 +4,8 @@ import ReactJsIcon from "../ui/jsx/ReactJsIcon";
 import NextJsIcon from "../ui/jsx/NextJsIcon";
 import TailwindCssIcon from "../ui/jsx/TailwindCssIcon";
 import GSAPIcon from "../ui/jsx/GSAPIcon";
+import GitIcon from "../ui/jsx/GitIcon";
+import GithubIcon from "../ui/jsx/GithubIcon";
 import FigmaIcon from "../ui/jsx/FigmaIcon";
 
 const iconSkillsArr = [
@@ -13,6 +15,8 @@ const iconSkillsArr = [
   { jsx: <NextJsIcon />, tag: "NextJS" },
   { jsx: <TailwindCssIcon />, tag: "TailwindCSS" },
   { jsx: <GSAPIcon />, tag: "GSAP" },
+  { jsx: <GitIcon />, tag: "Git" },
+  { jsx: <GithubIcon />, tag: "Github" },
   { jsx: <FigmaIcon />, tag: "Figma" },
 ];
 

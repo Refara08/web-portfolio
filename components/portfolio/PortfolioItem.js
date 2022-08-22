@@ -7,7 +7,7 @@ import Eye from "../ui/jsx/Eye";
 
 const PortfolioItem = (props) => {
   const [isHover, setIsHover] = useState(false);
-  const { title, image, slug, desc, tags } = props.portfolio;
+  const { title, image, slug, topic } = props.portfolio;
 
   const detailPageLink = `/portfolios/${slug}`;
   const imageLink = `/images/portfolios/${slug}/${image}`;
@@ -28,7 +28,7 @@ const PortfolioItem = (props) => {
     >
       <Link href={detailPageLink}>
         <a>
-          <div className="relative">
+          <div>
             <div>
               <Image
                 src={imageLink}
@@ -36,16 +36,22 @@ const PortfolioItem = (props) => {
                 width={"300px"}
                 height={"150px"}
                 layout={"responsive"}
+                className={`transition-all duration-1000 ${
+                  isHover
+                    ? "scale-105 translate-y-2"
+                    : "scale-100 translate-y-0"
+                }`}
               />
             </div>
             <div
-              className={`absolute bottom-0 w-full px-6 pt-4 pb-6 bg-black bg-opacity-90 transition-all duration-500 flex justify-between items-center ${
-                isHover
-                  ? "translate-y-0 opacity-100"
-                  : "translate-y-20 opacity-0"
-              }`}
+              className={`w-full px-6 pt-4 pb-6 bg-dark-prime transition-all duration-500 flex justify-between items-center`}
             >
-              <h1 className="text-2xl fonts-semibold">{title}</h1>
+              <div>
+                <h1 className="text-2xl font-semibold mb-2">{title}</h1>
+                <p className="font-light tracking-wider text-secondary">
+                  {topic}
+                </p>
+              </div>
               <Eye />
             </div>
           </div>

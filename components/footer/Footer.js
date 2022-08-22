@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div
       id="contact"
-      className="grid grid-cols-2 pt-12 pb-20 px-16 bg-dark-prime"
+      className="grid grid-cols-2 pt-12 pb-20 px-56 bg-dark-prime"
     >
       <div className="pl-40">
         <div className="mb-12">
@@ -52,7 +52,7 @@ const Footer = () => {
               placeholder="we need help to remake our company website"
             />
           </div>
-          <button className="font-bold tracking-wider bg-dark-prime hover:bg-white text-white hover:text-dark-prime border-[0.5px] border-white hover:border-opacity-0 py-2 px-5 rounded-full transition-all duration-300">
+          <button className="font-bold tracking-wider bg-dark-prime hover:bg-white text-white hover:text-dark-prime border-[0.5px] border-white hover:border-opacity-0 py-2 px-6 mt-4 rounded-full transition-all duration-300">
             send
           </button>
         </form>
