@@ -22,7 +22,7 @@ const Footer = () => {
         </div>
       </div>
       <div>
-        <h2 className="text-5xl font-bold mb-8">Let's Talk!</h2>
+        <h2 className="text-5xl font-bold mb-8">Let&apos;s Talk!</h2>
         <form>
           <div className="input-group">
             <label htmlFor="name">Name & Company</label>

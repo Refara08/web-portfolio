@@ -34,7 +34,7 @@ const NavComp = (props) => {
       { yPercent: -200, opacity: 0 },
       { yPercent: 0, opacity: 1, stagger: 0.1 }
     );
-  }, []);
+  }, [q]);
 
   return (
     <div
@@ -47,6 +47,7 @@ const NavComp = (props) => {
           <a>
             <Image
               src={logo}
+              alt="logo"
               width={`${width}px`}
               height={`${width / ratio}px`}
             />
