@@ -6,26 +6,30 @@ import gsap from "gsap";
 const Backdrop = (props) => {
   const backdropRef = useRef();
 
-  useEffect(() => {
-    if (props.isOpen) {
-      gsap.fromTo(
-        backdropRef.current,
-        { opacity: 0, zIndex: -20 },
-        { opacity: 1, zIndex: 20 }
-      );
-    } else {
-      gsap.fromTo(
-        backdropRef.current,
-        { opacity: 1, zIndex: 20 },
-        { opacity: 0, zIndex: -20 }
-      );
-    }
-  }, [props.isOpen]);
+  // useEffect(() => {
+  //   if (props.isOpen) {
+  //     gsap.fromTo(
+  //       backdropRef.current,
+  //       { opacity: 0, zIndex: -20 },
+  //       { opacity: 1, zIndex: 20 }
+  //     );
+  //   } else {
+  //     gsap.fromTo(
+  //       backdropRef.current,
+  //       { opacity: 1, zIndex: 20 },
+  //       { opacity: 0, zIndex: -20 }
+  //     );
+  //   }
+  // }, [props.isOpen]);
 
   return (
     <div
       ref={backdropRef}
-      className="fixed lg:hidden top-0 left-0 w-full h-screen -z-20 bg-black bg-opacity-75"
+      className={`fixed lg:hidden top-0 left-0 w-full h-screen -z-20 bg-black bg-opacity-75 ${
+        props.isOpen
+          ? "opacity-100 translate-x-0 z-20"
+          : "opacity-0 translate-x-5 -z-20"
+      }`}
       onClick={props.onClose}
     />
   );
