@@ -17,7 +17,7 @@ function Eye(props) {
     <div
       onMouseEnter={onHovering}
       onMouseLeave={onLeaveing}
-      className={`flex justify-evenly items-center gap-2 py-1 px-3 rounded-full transition-all duration-300 ${
+      className={`hidden sm:flex justify-evenly items-center gap-2 py-1 px-3 rounded-full transition-all duration-300 ${
         isHover ? "translate-x-0" : "translate-x-20"
       }`}
     >

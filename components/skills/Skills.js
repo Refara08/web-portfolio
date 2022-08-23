@@ -7,7 +7,7 @@ const Skills = (props) => {
       <h1 className="text-4xl font-bold mb-12 uppercase tracking-widest">
         Skills & Experience
       </h1>
-      <div className="grid grid-cols-2 gap-x-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div>
           <h3 className="mb-4 text-2xl font-light tracking-widest">
             Experience

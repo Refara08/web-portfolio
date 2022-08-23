@@ -21,7 +21,7 @@ const Services = () => {
       <h1 className="text-4xl font-bold mb-12 uppercase tracking-widest">
         What can I do for you
       </h1>
-      <div className={`grid grid-cols-${services.length} gap-8`}>
+      <div className={`grid grid-cols-1 lg:grid-cols-${services.length} gap-8`}>
         {services.map((item, index) => (
           <ServicesCard key={index} serviceItem={item} />
         ))}

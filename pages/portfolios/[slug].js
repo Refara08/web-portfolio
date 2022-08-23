@@ -24,7 +24,7 @@ const PorfolioDetailPage = (props) => {
   const fullImagePath = image.replace(/\.png/, "-fullpage.png");
 
   return (
-    <div className="grid grid-cols-2 gap-8 items-center mt-14 pb-28">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mt-14 pb-28 px-8">
       <div className="">
         <Image
           src={`/images/portfolios/${slug}/${fullImagePath}`}
@@ -39,7 +39,7 @@ const PorfolioDetailPage = (props) => {
         <h1 className="text-5xl font-bold mb-12">{title}</h1>
         <p className="mb-6">{desc}</p>
         <SkillIcons icons={madeWith} />
-        <div className="flex justify-start items-center gap-4">
+        <div className="flex justify-start items-center gap-4 flex-wrap">
           <ButtonPrime href={website} target={"_blank"}>
             Visit Website
           </ButtonPrime>
