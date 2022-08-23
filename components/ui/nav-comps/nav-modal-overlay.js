@@ -38,14 +38,14 @@ const ModalOverlay = (props) => {
     if (props.isOpen) {
       gsap.fromTo(
         overlayRef.current,
-        { opacity: 0, xPercent: 5, zIndex: -20 },
+        { opacity: 0, xPercent: 0, zIndex: -20 },
         { opacity: 1, xPercent: 0, zIndex: 30 }
       );
     } else {
       gsap.fromTo(
         overlayRef.current,
         { opacity: 1, xPercent: 0, zIndex: 30 },
-        { opacity: 0, xPercent: 5, zIndex: -20 }
+        { opacity: 0, xPercent: 0, zIndex: -20 }
       );
     }
   }, [props.isOpen]);
