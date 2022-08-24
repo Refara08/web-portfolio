@@ -2,8 +2,8 @@
 title: "Invitia Landing Page"
 topic: "Web Development"
 image: "invitia.png"
-desc: "An online wedding invitation service company landing page Hungray is a restaurant non quam lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit amet consectetur adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla facilisi nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus et netus et malesuada"
-tags: ["HTML5", "CSS", "TailwindCSS"]
+desc: "Invitia is a team of online wedding invitation making service providers. This landing page is a brochure website that provides important information related to the services and packages available and also the features that are obtained in a particular package. This website is still under development, which will further build a login system for customers which will then connect to the dashboard page to monitor the work of making invitations and also important information such as guest attendance lists and greetings given."
+tags: ["HTML5", "CSS", "Javascript", "TailwindCSS"]
 website: "https://www.invitia.co.id/"
 github: "https://github.com/Refara08/invitia-landing-page-tailwindcss"
 priority: true
@@ -11,4 +11,4 @@ priority: true
 
 # Invitia Landing Page
 
-Hungray is a restaurant non quam lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit amet consectetur adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla facilisi nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus et netus et malesuada
+Invitia is a team of online wedding invitation making service providers. This landing page is a brochure website that provides important information related to the services and packages available and also the features that are obtained in a particular package. This website is still under development, which will further build a login system for customers which will then connect to the dashboard page to monitor the work of making invitations and also important information such as guest attendance lists and greetings given.

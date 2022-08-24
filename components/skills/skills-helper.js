@@ -7,10 +7,12 @@ import GSAPIcon from "../ui/jsx/GSAPIcon";
 import GitIcon from "../ui/jsx/GitIcon";
 import GithubIcon from "../ui/jsx/GithubIcon";
 import FigmaIcon from "../ui/jsx/FigmaIcon";
+import JavasriptIcon from "../ui/jsx/JavascriptIcon";
 
 const iconSkillsArr = [
   { jsx: <HTML5Icon />, tag: "HTML5" },
   { jsx: <CssIcon />, tag: "CSS" },
+  { jsx: <JavasriptIcon />, tag: "Javascript" },
   { jsx: <ReactJsIcon />, tag: "ReactJS" },
   { jsx: <NextJsIcon />, tag: "NextJS" },
   { jsx: <TailwindCssIcon />, tag: "TailwindCSS" },
