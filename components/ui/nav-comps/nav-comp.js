@@ -12,25 +12,12 @@ const NavComp = (props) => {
   const { logo, navItems, width, ratio } = props;
   const [isOpen, setOpen] = useState(false);
 
-  const burgerRef = useRef();
   const navChildRef = useRef();
   const q = gsap.utils.selector(navChildRef);
 
   const closeHandler = () => {
     setOpen(false);
   };
-
-  const openCloseToggle = () => {
-    setOpen((prev) => !prev);
-  };
-
-  useEffect(() => {
-    if (isOpen) {
-      gsap.fromTo(burgerRef.current, { opacity: 1 }, { opacity: 0 });
-    } else {
-      gsap.fromTo(burgerRef.current, { opacity: 0 }, { opacity: 1 });
-    }
-  }, [isOpen]);
 
   useEffect(() => {
     gsap.fromTo(
@@ -69,7 +56,11 @@ const NavComp = (props) => {
               </Link>
             </li>
           ))}
-          <li ref={burgerRef} className="block lg:hidden">
+          <li
+            className={`block lg:hidden ${
+              isOpen ? "opacity-0" : "opacity-100"
+            }`}
+          >
             <Hamburger toggled={isOpen} toggle={setOpen} size={25} />
           </li>
         </ul>
