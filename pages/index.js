@@ -11,7 +11,7 @@ export default function Home(props) {
 
   return (
     <div>
-      <Hero />
+      {/* <Hero /> */}
       <Services />
       <Skills icons={allIcons} />
       <Portfolio portfolioList={props.posts} />
