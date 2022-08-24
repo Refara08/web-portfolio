@@ -1,10 +1,10 @@
 import { Fragment, useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 
-import gsap from "gsap";
+// import gsap from "gsap";
 
 const Backdrop = (props) => {
-  const backdropRef = useRef();
+  // const backdropRef = useRef();
 
   // useEffect(() => {
   //   if (props.isOpen) {
@@ -24,7 +24,7 @@ const Backdrop = (props) => {
 
   return (
     <div
-      ref={backdropRef}
+      // ref={backdropRef}
       className={`fixed lg:hidden top-0 left-0 w-full h-screen -z-20 bg-black bg-opacity-75 ${
         props.isOpen
           ? "opacity-100 translate-x-0 z-20"
@@ -36,28 +36,30 @@ const Backdrop = (props) => {
 };
 
 const ModalOverlay = (props) => {
-  const overlayRef = useRef();
+  // const overlayRef = useRef();
 
-  useEffect(() => {
-    if (props.isOpen) {
-      gsap.fromTo(
-        overlayRef.current,
-        { opacity: 0, zIndex: -20 },
-        { opacity: 1, zIndex: 30 }
-      );
-    } else {
-      gsap.fromTo(
-        overlayRef.current,
-        { opacity: 1, zIndex: 30 },
-        { opacity: 0, zIndex: -20 }
-      );
-    }
-  }, [props.isOpen]);
+  // useEffect(() => {
+  //   if (props.isOpen) {
+  //     gsap.fromTo(
+  //       overlayRef.current,
+  //       { opacity: 0, zIndex: -20 },
+  //       { opacity: 1, zIndex: 30 }
+  //     );
+  //   } else {
+  //     gsap.fromTo(
+  //       overlayRef.current,
+  //       { opacity: 1, zIndex: 30 },
+  //       { opacity: 0, zIndex: -20 }
+  //     );
+  //   }
+  // }, [props.isOpen]);
 
   return (
     <div
-      ref={overlayRef}
-      className="fixed lg:hidden top-0 right-0 w-full md:w-2/5 lg:w-[400px] -z-30"
+      // ref={overlayRef}
+      className={`fixed lg:hidden top-0 right-0 w-full md:w-2/5 lg:w-[400px] ${
+        props.isOpen ? "opacity-100 z-30" : "opacity-0 -z-20"
+      }`}
     >
       <div>{props.children}</div>
     </div>

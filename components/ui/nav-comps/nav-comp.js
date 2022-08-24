@@ -46,7 +46,7 @@ const NavComp = (props) => {
       className={`flex justify-between items-center px-8 pt-8 sm:pt-12 pb-4 bg-primary text-txt-prime sticky top-0 z-20
       `}
     >
-      <div className="pl-4 nav-child">
+      <div className="pl-4">
         <Link href="/">
           <a>
             <Image
