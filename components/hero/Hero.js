@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 
@@ -20,8 +20,14 @@ const Hero = (props) => {
       )
       .fromTo(
         q(".hero-image"),
-        { xPercent: 20, opacity: 0 },
+        { xPercent: 10, opacity: 0 },
         { xPercent: 0, opacity: 1 },
+        "<"
+      )
+      .fromTo(
+        q(".hero-image-mobile"),
+        { yPercent: 20, scale: 0.8, opacity: 0 },
+        { yPercent: 0, scale: 1, opacity: 1, duration: 0.8 },
         "<"
       );
   }, [q]);
@@ -36,13 +42,28 @@ const Hero = (props) => {
         <HeroContent />
         <HeroSocials />
       </div>
-      <div className="hero-image w-fit aspect-square m-auto px-4">
+      <div
+        className={`hidden lg:block hero-image w-fit aspect-square m-auto px-4 `}
+      >
         <Image
           src={"/images/hero/hero-pict-grayscale.jpg"}
           width={"650px"}
           height={"650px"}
           alt={"picture of the author"}
           className={""}
+          // priority={true}
+        />
+      </div>
+      <div
+        className={`block lg:hidden hero-image-mobile w-fit aspect-square m-auto px-4 `}
+      >
+        <Image
+          src={"/images/hero/hero-pict-grayscale.jpg"}
+          width={"650px"}
+          height={"650px"}
+          alt={"picture of the author"}
+          className={""}
+          // priority={true}
         />
       </div>
     </div>
