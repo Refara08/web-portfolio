@@ -5,7 +5,7 @@ const SkillIconsTags = (props) => {
       {icons.map((icon) => (
         <div
           key={icon.tag}
-          className="flex flex-col md:flex-row justify-start items-center gap-4"
+          className="hover:scale-110 transition duration-300 flex flex-col md:flex-row justify-start items-center gap-4"
         >
           <div>{icon.jsx}</div>
           <p className="text-xl">{icon.tag}</p>

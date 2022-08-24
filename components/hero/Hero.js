@@ -1,11 +1,11 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 
 import HeroContent from "./HeroContent";
 import HeroSocials from "./HeroSocials";
 
-const Hero = (props) => {
+const Hero = () => {
   const heroRef = useRef();
   const q = gsap.utils.selector(heroRef);
   const tl = useRef();
@@ -50,8 +50,6 @@ const Hero = (props) => {
           width={"650px"}
           height={"650px"}
           alt={"picture of the author"}
-          className={""}
-          // priority={true}
         />
       </div>
       <div
@@ -62,8 +60,6 @@ const Hero = (props) => {
           width={"650px"}
           height={"650px"}
           alt={"picture of the author"}
-          className={""}
-          // priority={true}
         />
       </div>
     </div>

@@ -30,7 +30,7 @@ const NavComp = (props) => {
   return (
     <div
       ref={navChildRef}
-      className={`flex justify-between items-center gap-4 px-8 pt-8 sm:pt-12 pb-4 bg-primary text-txt-prime sticky top-0 z-20
+      className={`flex justify-between items-center gap-4 px-20 pt-8 sm:pt-12 pb-4 bg-primary text-txt-prime sticky top-0 z-20
       `}
     >
       <div className="pl-0 lg:pl-4 scale-75 lg:scale-100">

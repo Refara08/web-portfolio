@@ -24,7 +24,7 @@ const PortfolioItem = (props) => {
     <li
       onMouseEnter={mouseIsHovering}
       onMouseLeave={mouseLeaving}
-      className="rounded-xl overflow-hidden bg-primary-2 hover:scale-105 hover:shadow-xl active:scale-95 duration-300 cursor-pointer"
+      className="portfolio-details rounded-xl overflow-hidden bg-primary-2 hover:scale-105 hover:shadow-xl active:scale-95 duration-300 cursor-pointer"
     >
       <Link href={detailPageLink}>
         <a>

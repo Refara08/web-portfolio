@@ -1,3 +1,9 @@
+import { useRef, useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 import ServicesCard from "./ServicesCard";
 import DesigningIcon from "../ui/jsx/Designing";
 import DevelopmentIcon from "../ui/jsx/Development";
@@ -16,8 +22,31 @@ const services = [
 ];
 
 const Services = () => {
+  const serviceRef = useRef();
+  const q = gsap.utils.selector(serviceRef);
+
+  useEffect(() => {
+    q(".service-card").forEach((card) => {
+      gsap.fromTo(
+        card,
+        { y: 100, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: card,
+            once: true,
+            start: "top 70%",
+            end: "bottom 50%",
+          },
+        }
+      );
+    });
+  }, []);
+
   return (
-    <div id={"services"} className="my-40 px-10">
+    <div ref={serviceRef} id={"services"} className="my-40 px-10">
       <h1 className="text-4xl font-bold mb-12 uppercase tracking-widest">
         What can I do for you
       </h1>

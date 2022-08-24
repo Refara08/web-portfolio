@@ -14,8 +14,8 @@ const Layout = (props) => {
         />
       </Head>
       <div className={`bg-primary text-txt-prime`}>
+        <Navigation items={navItems} />
         <div className="container mx-auto ">
-          <Navigation items={navItems} />
           <main className="flex-[1]">{props.children}</main>
         </div>
         <Footer />
