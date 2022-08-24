@@ -38,7 +38,7 @@ const Hero = (props) => {
       id="hero"
       className="w-full flex flex-col lg:flex-row justify-between gap-6 lg:gap-0"
     >
-      <div className="hero-content flex flex-col justify-between pt-4 lg:pt-12 px-12 pb-4 gap-16 flex-[1]">
+      <div className="hero-content flex flex-col justify-between pt-4 lg:pt-12 px-8 lg:px-12 pb-4 gap-16 flex-[1]">
         <HeroContent />
         <HeroSocials />
       </div>
