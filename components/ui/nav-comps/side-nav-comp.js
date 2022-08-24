@@ -13,7 +13,11 @@ const SideNav = (props) => {
 
   useEffect(() => {
     if (isOpen) {
-      gsap.fromTo(q("li"), { xPercent: 500 }, { xPercent: 0, stagger: 0.075 });
+      gsap.fromTo(
+        q("li"),
+        { yPercent: 300, opacity: 0 },
+        { yPercent: 0, opacity: 1, stagger: 0.075, duration: 0.5 }
+      );
     }
   }, [isOpen, q]);
 

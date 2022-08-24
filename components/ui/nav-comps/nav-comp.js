@@ -20,6 +20,10 @@ const NavComp = (props) => {
     setOpen(false);
   };
 
+  const openCloseToggle = () => {
+    setOpen((prev) => !prev);
+  };
+
   useEffect(() => {
     if (isOpen) {
       gsap.fromTo(burgerRef.current, { opacity: 1 }, { opacity: 0 });
