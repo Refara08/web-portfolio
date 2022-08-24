@@ -1,30 +1,30 @@
 import Link from "next/link";
 import { Squash as Hamburger } from "hamburger-react";
-// import { useEffect, useRef } from "react";
-// import gsap from "gsap";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 
 import Modal from "./nav-modal-overlay";
 
 const SideNav = (props) => {
   const { navItems, isOpen, setOpen, onClose } = props;
 
-  // const navRef = useRef();
-  // const q = gsap.utils.selector(navRef);
+  const navRef = useRef();
+  const q = gsap.utils.selector(navRef);
 
-  // useEffect(() => {
-  //   if (isOpen) {
-  //     gsap.fromTo(
-  //       q("li"),
-  //       { yPercent: 300, opacity: 0 },
-  //       { yPercent: 0, opacity: 1, stagger: 0.075, duration: 0.5 }
-  //     );
-  //   }
-  // }, [isOpen, q]);
+  useEffect(() => {
+    if (isOpen) {
+      gsap.fromTo(
+        q("li"),
+        { xPercent: 300, opacity: 0 },
+        { xPercent: 0, opacity: 1, stagger: 0.075, duration: 0.5 }
+      );
+    }
+  }, [isOpen, q]);
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ul
-        // ref={navRef}
+        ref={navRef}
         className="flex flex-col items-end justify-start gap-10 bg-primary text-txt-prime pt-8 px-8 md:px-[3rem] h-screen"
       >
         <li className="block">
