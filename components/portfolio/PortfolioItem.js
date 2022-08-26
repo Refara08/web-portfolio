@@ -24,7 +24,7 @@ const PortfolioItem = (props) => {
     <li
       onMouseEnter={mouseIsHovering}
       onMouseLeave={mouseLeaving}
-      className="portfolio-details rounded-xl overflow-hidden bg-primary-2 hover:scale-105 hover:shadow-xl active:scale-95 duration-300 cursor-pointer"
+      className="portfolio-details rounded-xl overflow-hidden bg-primary-2 hover:scale-95 hover:shadow-xl active:scale-95 duration-300 cursor-pointer"
     >
       <Link href={detailPageLink}>
         <a>
@@ -44,7 +44,7 @@ const PortfolioItem = (props) => {
               />
             </div>
             <div
-              className={`w-full px-6 pt-4 pb-6 bg-dark-prime transition-all duration-500 flex flex-col items-start gap-4 sm:flex-row sm:justify-between sm:items-center`}
+              className={`w-full px-6 pt-4 pb-6 bg-dark-prime transition-all duration-500 flex flex-col items-start gap-4 xl:flex-row xl:justify-between xl:items-center`}
             >
               <div>
                 <h1 className="text-2xl font-semibold mb-2">{title}</h1>

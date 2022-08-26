@@ -20,6 +20,7 @@ const Portfolio = (props) => {
           yPercent: 0,
           opacity: 1,
           stagger: 0.2,
+          clearProps: "all",
           scrollTrigger: {
             trigger: item,
             scrub: 1,

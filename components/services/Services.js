@@ -34,6 +34,7 @@ const Services = () => {
           y: 0,
           opacity: 1,
           ease: "power3.out",
+          clearProps: "all",
           scrollTrigger: {
             trigger: card,
             once: true,

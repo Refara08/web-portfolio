@@ -1,7 +1,6 @@
 import Image from "next/image";
-import { useRouter } from "next/router";
 
-import { getAllPost } from "../../lib/post-utils";
+import { getAllPost, getPostData } from "../../lib/post-utils";
 import { getSpecificSkillsIcon } from "../../components/skills/skills-helper";
 
 import SkillIcons from "../../components/skills/SkillIcons";
@@ -9,15 +8,8 @@ import ButtonSecondary from "../../components/ui/buttons/ButtonSecondary";
 import ButtonPrime from "../../components/ui/buttons/ButtonPrime";
 
 const PorfolioDetailPage = (props) => {
-  const router = useRouter();
-  const slugPath = router.query.slug;
-
-  const postData = props.posts.find((post) => {
-    return post.slug === slugPath;
-  });
-
   const { title, image, desc, slug, tags, website, github, priority, content } =
-    postData;
+    props.post;
 
   const madeWith = getSpecificSkillsIcon(tags);
 
@@ -55,12 +47,15 @@ const PorfolioDetailPage = (props) => {
 
 export default PorfolioDetailPage;
 
-export const getStaticProps = () => {
-  const allPosts = getAllPost();
+export const getStaticProps = (context) => {
+  const { params } = context;
+  const { slug } = params;
+
+  const postData = getPostData(slug);
 
   return {
     props: {
-      posts: allPosts,
+      post: postData,
     },
     revalidate: 600,
   };
