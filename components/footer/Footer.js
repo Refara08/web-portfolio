@@ -31,6 +31,7 @@ const Footer = () => {
               name="name"
               id="name"
               placeholder="Andy from CompanyA"
+              required
             />
           </div>
           <div className="input-group">
@@ -40,6 +41,7 @@ const Footer = () => {
               name="email"
               id="email"
               placeholder="andy@companya.com"
+              required
             />
           </div>
           <div className="input-group">
@@ -50,6 +52,7 @@ const Footer = () => {
               cols="50"
               rows="5"
               placeholder="we need help to remake our company website"
+              required
             />
           </div>
           <button className="font-bold tracking-wider bg-dark-prime hover:bg-white text-white hover:text-dark-prime border-[0.5px] border-white hover:border-opacity-0 py-2 px-6 mt-4 rounded-full transition-all duration-300">

@@ -31,7 +31,7 @@ const PorfolioDetailPage = (props) => {
         <h1 className="text-5xl font-bold mb-12">{title}</h1>
         <p className="mb-6">{desc}</p>
         <SkillIcons icons={madeWith} />
-        <div className="flex justify-start items-center gap-4 flex-wrap">
+        <div className="flex justify-start items-center gap-4 flex-wrap mt-20">
           <ButtonPrime href={website} target={"_blank"}>
             Visit Website
           </ButtonPrime>

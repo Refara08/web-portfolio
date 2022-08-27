@@ -1,7 +1,7 @@
 const SkillIconsTags = (props) => {
   const { icons } = props;
   return (
-    <div className="grid grid-cols-3 gap-4 lg:gap-8 lg:gap-y-12">
+    <div className="grid grid-cols-3 place-items-start lg:place-items-center gap-4 lg:gap-8 lg:gap-y-12">
       {icons.map((icon) => (
         <div
           key={icon.tag}
