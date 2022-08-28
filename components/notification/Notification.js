@@ -1,3 +1,5 @@
+import NotifModal from "./notification-overlay";
+
 const Notification = (props) => {
   const { status, message } = props;
 
@@ -5,8 +7,8 @@ const Notification = (props) => {
 
   if (status === "success") {
     styling = {
-      bgColor: "bg-green-600",
-      textColor: "text-black",
+      bgColor: "bg-green-700",
+      textColor: "text-white",
       status: "Success",
     };
   } else if (status === "pending") {
@@ -24,12 +26,16 @@ const Notification = (props) => {
   }
 
   return (
-    <div className={`${styling.bgColor} ${styling.textColor}`}>
-      <div className="container mx-auto flex justify-between items-center p-4">
-        <h3 className="text-xl font-bold tracking-widest">{styling.status}</h3>
-        <p className="text-md tracking-wider font-semibold">{message}</p>
+    <NotifModal>
+      <div className={`${styling.bgColor} ${styling.textColor}`}>
+        <div className="container mx-auto flex justify-between items-center p-4">
+          <h3 className="text-lg font-bold tracking-widest">
+            {styling.status}
+          </h3>
+          <p className="text-sm tracking-wider font-semibold">{message}</p>
+        </div>
       </div>
-    </div>
+    </NotifModal>
   );
 };
 
