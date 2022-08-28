@@ -1,5 +1,6 @@
 import "../styles/globals.css";
 import Layout from "../components/layout/Layout";
+import { NotificationContextProvider } from "../store/notification-ctx";
 
 const navItems = [
   { placeholder: "Services", link: "/#services" },
@@ -10,11 +11,11 @@ const navItems = [
 
 function MyApp({ Component, pageProps }) {
   return (
-    <>
+    <NotificationContextProvider>
       <Layout navItems={navItems}>
         <Component {...pageProps} />
       </Layout>
-    </>
+    </NotificationContextProvider>
   );
 }
 
