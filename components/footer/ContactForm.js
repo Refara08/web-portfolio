@@ -43,6 +43,7 @@ const ContactForm = () => {
     } catch (error) {
       NotificationCtx.updateStatus("error");
       NotificationCtx.updateMessage(error.message);
+      console.log(error.message);
     }
   };
 
