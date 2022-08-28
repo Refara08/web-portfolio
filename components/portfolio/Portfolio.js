@@ -31,7 +31,7 @@ const Portfolio = (props) => {
         }
       );
     });
-  }, []);
+  }, [q]);
 
   return (
     <div ref={portfolioRef} id="portfolios" className="my-40 px-10">

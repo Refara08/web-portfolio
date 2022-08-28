@@ -44,7 +44,7 @@ const Services = () => {
         }
       );
     });
-  }, []);
+  }, [q]);
 
   return (
     <div ref={serviceRef} id={"services"} className="my-40 px-10">

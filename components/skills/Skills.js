@@ -33,7 +33,7 @@ const Skills = (props) => {
         }
       );
     });
-  }, []);
+  }, [q]);
 
   return (
     <div ref={skillsRef} id={"skills"} className="my-40 px-10">
