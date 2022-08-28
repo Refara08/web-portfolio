@@ -42,7 +42,7 @@ const ContactForm = () => {
       setEnteredMessage("");
     } catch (error) {
       NotificationCtx.updateStatus("error");
-      NotificationCtx.updateMessage(error.message);
+      NotificationCtx.updateMessage("Failed to send message...");
       console.log(error.message);
     }
   };
