@@ -1,3 +1,5 @@
+import Head from "next/head";
+
 import Hero from "../components/hero/Hero";
 import Portfolio from "../components/portfolio/Portfolio";
 import Skills from "../components/skills/Skills";
@@ -11,6 +13,13 @@ export default function Home(props) {
 
   return (
     <div>
+      <Head>
+        <title>Gema Refantero</title>
+        <meta
+          name="description"
+          content="Gema Refantero's web front end developer portfolio"
+        />
+      </Head>
       <Hero />
       <Services />
       <Skills icons={allIcons} />

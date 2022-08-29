@@ -25,11 +25,24 @@ const Notification = (props) => {
     };
   }
 
+  // <NotifModal>
+  //     <div className={`bg-green-700 text-white`}>
+  //       <div className="container mx-auto flex justify-center lg:justify-between items-center p-4">
+  //         <h3 className="hidden lg:block text-lg font-bold tracking-widest">
+  //           testing
+  //         </h3>
+  //         <p className="border-2 border-red-600 text-sm tracking-wider font-semibold">
+  //           your message has been sent successfully
+  //         </p>
+  //       </div>
+  //     </div>
+  //   </NotifModal>
+
   return (
     <NotifModal>
       <div className={`${styling.bgColor} ${styling.textColor}`}>
-        <div className="container mx-auto flex justify-between items-center p-4">
-          <h3 className="text-lg font-bold tracking-widest">
+        <div className="container mx-auto flex justify-center lg:justify-between items-center p-4">
+          <h3 className="hidden lg:block text-lg font-bold tracking-widest">
             {styling.status}
           </h3>
           <p className="text-sm tracking-wider font-semibold">{message}</p>
