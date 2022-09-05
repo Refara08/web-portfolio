@@ -16,6 +16,10 @@ function MyApp({ Component, pageProps }) {
     <NotificationContextProvider>
       <Layout navItems={navItems}>
         <Head>
+          <meta
+            name="google-site-verification"
+            content="zgLW5BVxjtsqfD9wt3qJxDW0Kj8ppJEPhRh_y3Ej5W0"
+          />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Head>
         <Component {...pageProps} />
