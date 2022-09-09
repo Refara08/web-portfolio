@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 
@@ -6,47 +6,94 @@ import HeroContent from "./HeroContent";
 import HeroSocials from "./HeroSocials";
 
 const Hero = () => {
+  const [cursorTransform, setCursorTransform] = useState({
+    x: "0px",
+    y: "0px",
+  });
+  const [isImageHovered, setIsImageHovered] = useState(false);
+  const [initialState, setInitialState] = useState(true);
   const heroRef = useRef();
   const q = gsap.utils.selector(heroRef);
   const tl = useRef();
 
   useEffect(() => {
-    tl.current = gsap
-      .timeline()
-      .fromTo(
-        q(".hero-content"),
-        { yPercent: 10, opacity: 0 },
-        { yPercent: 0, opacity: 1, duration: 1 }
-      )
-      .fromTo(
-        q(".hero-image"),
-        { xPercent: 10, opacity: 0 },
-        { xPercent: 0, opacity: 1 },
-        "<"
-      )
-      .fromTo(
-        q(".hero-image-mobile"),
-        { yPercent: 20, scale: 0.8, opacity: 0 },
-        { yPercent: 0, scale: 1, opacity: 1, duration: 0.8 },
-        "<"
-      );
+    if (initialState) {
+      tl.current = gsap
+        .timeline()
+        .fromTo(
+          q(".hero-content"),
+          { yPercent: 10, opacity: 0 },
+          { yPercent: 0, opacity: 1, duration: 1 }
+        )
+        .fromTo(
+          q(".hero-image"),
+          { xPercent: 10, opacity: 0 },
+          { xPercent: 0, opacity: 1 },
+          "<"
+        )
+        .fromTo(
+          q(".hero-image-mobile"),
+          { yPercent: 20, scale: 0.8, opacity: 0 },
+          { yPercent: 0, scale: 1, opacity: 1, duration: 0.8 },
+          "<"
+        );
+      setInitialState(false);
+    }
   }, [q]);
+
+  const mouseMoveHandler = (e) => {
+    const mouseX = e.clientX - e.currentTarget.offsetLeft;
+    const mouseY = e.clientY - e.currentTarget.offsetTop;
+
+    // console.log(mouseX);
+    // console.log(mouseY);
+
+    //biar ga keluar frame
+    if (mouseX < 520 && mouseY >= 600) {
+      setCursorTransform({ x: `${mouseX}px`, y: `600px` });
+    } else if (mouseX >= 520 && mouseY < 600) {
+      setCursorTransform({ x: `520px`, y: `${mouseY}px` });
+    } else {
+      setCursorTransform({ x: `${mouseX}px`, y: `${mouseY}px` });
+    }
+  };
 
   return (
     <div
       ref={heroRef}
       id="hero"
-      className="w-full flex flex-col lg:flex-row justify-between gap-6 lg:gap-0"
+      className="w-full flex flex-col lg:flex-row justify-between gap-6 lg:gap-0 "
     >
       <div className="hero-content flex flex-col justify-between pt-4 lg:pt-12 px-8 lg:px-12 pb-4 gap-16 flex-[1]">
         <HeroContent />
         <HeroSocials />
       </div>
       <div
-        className={`hidden lg:block hero-image w-fit aspect-square m-auto px-4 `}
+        onMouseEnter={() => setIsImageHovered(true)}
+        onMouseLeave={() => {
+          setIsImageHovered(false);
+          setCursorTransform({ x: `0px`, y: `0px` });
+        }}
+        onMouseMove={mouseMoveHandler}
+        className={`hidden lg:block w-fit aspect-square m-auto px-4 mix-blend-luminosity hover:mix-blend-normal grayscale hover:grayscale-0 transition-all duration-300 relative cursor-none`}
       >
+        <p
+          className={`absolute top-0 left-0 flex flex-col items-start z-20 ${
+            isImageHovered ? "opacity-100 text-9xl" : "opacity-0 text-sm"
+          }`}
+          style={{
+            transform: `translate3d(${cursorTransform.x}, ${cursorTransform.y}, 0px)`,
+            transition: "font-size 0.5s",
+          }}
+        >
+          <span>👋</span>
+          <span className="text-xl bg-black text-white py-1 px-3 rounded-full">
+            helo!
+          </span>
+        </p>
         <Image
           src={"/images/hero/hero-pict-grayscale.jpg"}
+          className="hero-image"
           width={"650px"}
           height={"650px"}
           alt={"picture of the author"}
