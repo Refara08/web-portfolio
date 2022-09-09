@@ -6,11 +6,16 @@ import { Squash as Hamburger } from "hamburger-react";
 
 import gsap from "gsap";
 
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+
 import SideNav from "./side-nav-comp";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const NavComp = (props) => {
   const { logo, navItems, width, ratio } = props;
   const [isOpen, setOpen] = useState(false);
+  const [bgOpacity, setBgOpacity] = useState("bg-opacity-10");
 
   const navChildRef = useRef();
   const q = gsap.utils.selector(navChildRef);
@@ -18,6 +23,45 @@ const NavComp = (props) => {
   const closeHandler = () => {
     setOpen(false);
   };
+
+  useEffect(() => {
+    document.addEventListener("scroll", () => {
+      if (window.scrollY > 150) {
+        setBgOpacity("bg-opacity-10");
+      } else {
+        setBgOpacity("bg-opacity-0");
+      }
+    });
+  }, []);
+
+  useEffect(() => {
+    ScrollTrigger.create({
+      onUpdate: (self) => {
+        if (
+          self.direction === 1 &&
+          window.scrollY > 200 &&
+          self.getVelocity() > 0
+        ) {
+          //scrolling down...
+          gsap.to(navChildRef.current, {
+            yPercent: -100,
+            opacity: 0,
+            ease: "power3.in",
+          });
+          // console.log(self.direction);
+          // console.log(self.getVelocity());
+        } else if (self.direction === -1) {
+          //scrolling up...
+          gsap.to(navChildRef.current, {
+            yPercent: 0,
+            opacity: 1,
+            ease: "power3.out",
+          });
+          // console.log(self.direction);
+        }
+      },
+    });
+  });
 
   useEffect(() => {
     gsap.fromTo(
@@ -30,7 +74,7 @@ const NavComp = (props) => {
   return (
     <div
       ref={navChildRef}
-      className={`flex justify-between items-center gap-4 px-4 lg:px-20  pt-8 sm:pt-12 pb-4 bg-primary text-txt-prime sticky top-0 z-20
+      className={`flex justify-between items-center gap-4 px-4 lg:px-20  pt-6 pb-4 bg-primary ${bgOpacity} backdrop-blur-lg text-txt-prime sticky top-0 z-20
       `}
     >
       <div className="pl-0 lg:pl-4 scale-75 lg:scale-100 flex-[1] lg:flex-none grid lg:block place-items-center">
