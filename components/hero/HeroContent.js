@@ -20,7 +20,7 @@ const HeroContent = () => {
     <div>
       <p className="text-secondary text-xl pl-2">Hello, I&apos;m</p>
       <h1 className="w-min text-6xl md:text-8xl 2xl:text-9xl font-bold">
-        Gema Refantero
+        Gema Refanteroow
       </h1>
       <h3 className="text-xl md:text-2xl 2xl:text-3xl pl-2 mt-3 mb-9">
         React-Nextjs Frontend Developer
