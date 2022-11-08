@@ -34,7 +34,7 @@ const Portfolio = (props) => {
   }, [q]);
 
   return (
-    <div ref={portfolioRef} id="portfolios" className="my-40 px-10">
+    <div ref={portfolioRef} id="portfolios" className="mt-40 px-10 py-12">
       <h1 className="text-4xl font-bold mb-12">My Latest Projects</h1>
       <ul className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         {portfolioList.map((item, index) => (

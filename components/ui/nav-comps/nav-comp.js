@@ -74,47 +74,49 @@ const NavComp = (props) => {
   return (
     <div
       ref={navChildRef}
-      className={`flex justify-between items-center gap-4 px-4 lg:px-20  pt-6 pb-4 bg-primary ${bgOpacity} backdrop-blur-lg text-txt-prime sticky top-0 z-20
+      className={`px-4 pt-6 pb-4 bg-primary ${bgOpacity} backdrop-blur-lg text-txt-prime sticky top-0 z-20
       `}
     >
-      <div className="pl-0 lg:pl-4 scale-75 lg:scale-100 flex-[1] lg:flex-none grid lg:block place-items-center">
-        <Link href="/">
-          <a>
-            <Image
-              src={logo}
-              alt="logo"
-              width={`${width}px`}
-              height={`${width / ratio}px`}
-            />
-          </a>
-        </Link>
-      </div>
-      <nav>
-        <ul className="flex justify-center items-center gap-4">
-          {navItems.map((item, index) => (
-            <li className="hidden lg:block nav-child" key={index}>
-              <Link href={item.link} scroll={false}>
-                <a className="relative z-10 px-4 pt-2 before:absolute before:block before:bottom-0 before:bg-white before:w-full before:h-0 before:transition-all before:duration-300 before:-z-10 before:hover:h-full hover:text-primary">
-                  {item.placeholder}
-                </a>
-              </Link>
+      <div className="container mx-auto flex justify-between items-center gap-4 ">
+        <div className="pl-0 lg:pl-4 scale-75 lg:scale-100 flex-[1] lg:flex-none grid lg:block place-items-center">
+          <Link href="/">
+            <a>
+              <Image
+                src={logo}
+                alt="logo"
+                width={`${width}px`}
+                height={`${width / ratio}px`}
+              />
+            </a>
+          </Link>
+        </div>
+        <nav>
+          <ul className="flex justify-center items-center gap-4">
+            {navItems.map((item, index) => (
+              <li className="hidden lg:block nav-child" key={index}>
+                <Link href={item.link} scroll={false}>
+                  <a className="relative z-10 px-4 pt-2 before:absolute before:block before:bottom-0 before:bg-white before:w-full before:h-0 before:transition-all before:duration-300 before:-z-10 before:hover:h-full hover:text-primary">
+                    {item.placeholder}
+                  </a>
+                </Link>
+              </li>
+            ))}
+            <li
+              className={`block lg:hidden ${
+                isOpen ? "opacity-0" : "opacity-100"
+              }`}
+            >
+              <Hamburger toggled={isOpen} toggle={setOpen} size={25} />
             </li>
-          ))}
-          <li
-            className={`block lg:hidden ${
-              isOpen ? "opacity-0" : "opacity-100"
-            }`}
-          >
-            <Hamburger toggled={isOpen} toggle={setOpen} size={25} />
-          </li>
-        </ul>
-        <SideNav
-          navItems={navItems}
-          isOpen={isOpen}
-          setOpen={setOpen}
-          onClose={closeHandler}
-        />
-      </nav>
+          </ul>
+          <SideNav
+            navItems={navItems}
+            isOpen={isOpen}
+            setOpen={setOpen}
+            onClose={closeHandler}
+          />
+        </nav>
+      </div>
     </div>
   );
 };
