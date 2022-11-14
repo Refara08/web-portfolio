@@ -25,7 +25,7 @@ const HeroContent = () => {
       <h3 className="text-xl md:text-2xl 2xl:text-3xl pl-2 mt-3 mb-9">
         React-Next.js Frontend Developer
       </h3>
-      <Link href="/#portfolios" passHref>
+      <Link href="/portfolios" passHref>
         <ButtonPrime
           onHover={hoverHandler}
           onLeave={leaveHandler}

@@ -8,7 +8,7 @@ const HeroSocials = (props) => {
   const sizeIcon = "1.75rem";
 
   return (
-    <div className="flex gap-4 socials">
+    <div className="hidden lg:flex gap-4 socials">
       <a
         target="_blank"
         href="https://www.instagram.com/refara.code/"

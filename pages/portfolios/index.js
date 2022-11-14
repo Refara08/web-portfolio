@@ -1,7 +1,7 @@
 import Head from "next/head";
-import Portfolio from "../components/portfolio/Portfolio";
+import Portfolio from "../../components/portfolio/Portfolio";
 
-import { getAllPost } from "../lib/post-utils";
+import { getAllPost } from "../../lib/post-utils";
 
 const PortfoliosPage = (props) => {
   return (

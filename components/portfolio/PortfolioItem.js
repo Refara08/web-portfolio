@@ -28,7 +28,7 @@ const PortfolioItem = (props) => {
     >
       <Link href={detailPageLink}>
         <a>
-          <div>
+          <div className="h-full">
             <div>
               <Image
                 src={imageLink}
@@ -44,7 +44,7 @@ const PortfolioItem = (props) => {
               />
             </div>
             <div
-              className={`w-full px-6 pt-4 pb-6 bg-dark-prime transition-all duration-500 flex flex-col items-start gap-4 xl:flex-row xl:justify-between xl:items-center`}
+              className={`w-full h-full xl:h-auto px-6 pt-4 pb-6 bg-dark-prime transition-all duration-500 flex flex-col items-start gap-4 xl:flex-row xl:justify-between xl:items-start`}
             >
               <div>
                 <h1 className="text-2xl font-semibold mb-2">{title}</h1>
