@@ -18,7 +18,15 @@ const NavArrow = ({ items }) => {
         </Link>
       </div>
     );
-  } else {
+  }
+
+  if (
+    router.pathname === "/" ||
+    router.pathname === "/services" ||
+    router.pathname === "/skills" ||
+    router.pathname === "/portfolios" ||
+    router.pathname === "/contact"
+  ) {
     return (
       <div
         className={`py-6 container-default flex ${
