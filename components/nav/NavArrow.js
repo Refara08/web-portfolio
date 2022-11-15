@@ -18,36 +18,36 @@ const NavArrow = ({ items }) => {
         </Link>
       </div>
     );
+  } else {
+    return (
+      <div
+        className={`py-6 container-default flex ${
+          indexPage === 0
+            ? "justify-end"
+            : indexPage === items.length - 1
+            ? "justify-start"
+            : "justify-between"
+        } items-center`}
+      >
+        {indexPage !== 0 && (
+          <Link href={items[indexPage - 1].link}>
+            <a className="flex items-center gap-3">
+              <ArrowLeft size="2rem" />
+              <h4>{items[indexPage - 1].placeholder}</h4>
+            </a>
+          </Link>
+        )}
+        {indexPage !== items.length - 1 && (
+          <Link href={items[indexPage + 1].link}>
+            <a className="flex items-center gap-3">
+              <h4>{items[indexPage + 1].placeholder}</h4>
+              <ArrowRight size="2rem" />
+            </a>
+          </Link>
+        )}
+      </div>
+    );
   }
-
-  return (
-    <div
-      className={`py-6 container-default flex ${
-        indexPage === 0
-          ? "justify-end"
-          : indexPage === items.length - 1
-          ? "justify-start"
-          : "justify-between"
-      } items-center`}
-    >
-      {indexPage !== 0 && (
-        <Link href={items[indexPage - 1].link}>
-          <a className="flex items-center gap-3">
-            <ArrowLeft size="2rem" />
-            <h4>{items[indexPage - 1].placeholder}</h4>
-          </a>
-        </Link>
-      )}
-      {indexPage !== items.length - 1 && (
-        <Link href={items[indexPage + 1].link}>
-          <a className="flex items-center gap-3">
-            <h4>{items[indexPage + 1].placeholder}</h4>
-            <ArrowRight size="2rem" />
-          </a>
-        </Link>
-      )}
-    </div>
-  );
 };
 
 export default NavArrow;
