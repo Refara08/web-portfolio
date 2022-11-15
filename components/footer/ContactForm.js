@@ -48,7 +48,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div>
+    <div className="lg:col-span-2">
       <h2 className="text-5xl font-bold mb-8">Let&apos;s Talk!</h2>
       <form onSubmit={submitHandler}>
         <div className="input-group">
@@ -57,7 +57,7 @@ const ContactForm = () => {
             type="text"
             name="name"
             id="name"
-            placeholder="Andy from CompanyA"
+            placeholder="your name..."
             required
             value={enteredName}
             onChange={(event) => setEnteredName(event.target.value)}
@@ -69,7 +69,7 @@ const ContactForm = () => {
             type="email"
             name="email"
             id="email"
-            placeholder="andy@companya.com"
+            placeholder="e.g. name@email.com"
             required
             value={enteredEmail}
             onChange={(event) => setEnteredEmail(event.target.value)}
@@ -82,7 +82,7 @@ const ContactForm = () => {
             id="message"
             cols="50"
             rows="5"
-            placeholder="we need help to remake our company website"
+            placeholder="e.g. We need help to remake our company website"
             required
             value={enteredMessage}
             onChange={(event) => setEnteredMessage(event.target.value)}

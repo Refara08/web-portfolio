@@ -1,4 +1,3 @@
-import Instagram from "../ui/jsx/Instagram";
 import LinkedIn from "../ui/jsx/LinkedIn";
 import Github from "../ui/jsx/Github";
 import Twitter from "../ui/jsx/Twitter";
@@ -9,13 +8,6 @@ const HeroSocials = (props) => {
 
   return (
     <div className="hidden lg:flex gap-4 socials">
-      <a
-        target="_blank"
-        href="https://www.instagram.com/refara.code/"
-        rel="noopener noreferrer"
-      >
-        <Instagram size={sizeIcon} />
-      </a>
       <a
         target="_blank"
         href="https://twitter.com/GRefantero"

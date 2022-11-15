@@ -5,7 +5,7 @@ import { getAllPost } from "../../lib/post-utils";
 
 const PortfoliosPage = (props) => {
   return (
-    <div>
+    <>
       <Head>
         <title>Gema Refantero | Portfolios</title>
         <meta
@@ -14,7 +14,7 @@ const PortfoliosPage = (props) => {
         />
       </Head>
       <Portfolio portfolioList={props.posts} />
-    </div>
+    </>
   );
 };
 

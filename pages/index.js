@@ -3,7 +3,7 @@ import Hero from "../components/hero/Hero";
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Head>
         <title>Gema Refantero</title>
         <meta
@@ -12,6 +12,6 @@ export default function Home() {
         />
       </Head>
       <Hero />
-    </div>
+    </>
   );
 }

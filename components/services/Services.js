@@ -47,7 +47,7 @@ const Services = () => {
   }, [q]);
 
   return (
-    <div ref={serviceRef} id={"services"} className="my-40 px-10">
+    <div ref={serviceRef} id={"services"} className="h-full pt-12 px-10">
       <h1 className="text-4xl font-bold mb-12 uppercase tracking-widest">
         What can I do for you
       </h1>

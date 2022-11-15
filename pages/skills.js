@@ -7,7 +7,7 @@ const SkillsPage = () => {
   const allIcons = getAllSkillIcons();
 
   return (
-    <div>
+    <>
       <Head>
         <title>Gema Refantero | Services</title>
         <meta
@@ -16,7 +16,7 @@ const SkillsPage = () => {
         />
       </Head>
       <Skills icons={allIcons} />
-    </div>
+    </>
   );
 };
 

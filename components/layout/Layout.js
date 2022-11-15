@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { Gradient } from "../../lib/Gradient";
+import NavArrow from "../nav/NavArrow";
 import Navigation from "../nav/Navigation";
-import NewNav from "../nav/NewNav";
+import NavProgressBar from "../nav/NavProgressBar";
 
 const Layout = (props) => {
   const { navItems } = props;
@@ -20,14 +21,13 @@ const Layout = (props) => {
         <canvas id="gradient-canvas" data-transition-in />
       </div>
       <div
-        className={`bg-primary bg-opacity-40 text-txt-prime min-h-screen flex flex-col`}
+        className={`bg-primary bg-opacity-40 text-txt-prime h-screen flex flex-col`}
       >
-        {/* <Navigation items={navItems} /> */}
-        <NewNav items={navItems}>
-          <div className="container mx-auto flex-[1] grid items-center overflow-hidden py-4">
-            <main className="">{props.children}</main>
-          </div>
-        </NewNav>
+        <NavArrow items={navItems} />
+        <div className="container mx-auto flex-[1] overflow-y-auto grid items-center py-4">
+          <main className="h-full">{props.children}</main>
+        </div>
+        <NavProgressBar items={navItems} />
       </div>
     </div>
   );

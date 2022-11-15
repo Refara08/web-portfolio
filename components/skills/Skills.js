@@ -36,7 +36,7 @@ const Skills = (props) => {
   }, [q]);
 
   return (
-    <div ref={skillsRef} id={"skills"} className="my-40 px-10">
+    <div ref={skillsRef} id={"skills"} className="px-10 h-full pt-12">
       <h1 className="text-4xl font-bold mb-12 uppercase tracking-widest">
         Skills & Experience
       </h1>

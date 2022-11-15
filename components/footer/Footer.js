@@ -19,9 +19,9 @@ const Footer = () => {
       )}
       <div
         id="contact"
-        className="grid grid-cols-1 lg:grid-cols-2 pt-12 pb-20 px-8 xl:px-56 bg-dark-prime bg-opacity-60"
+        className="grid grid-cols-1 lg:grid-cols-3 pt-12 pb-20 px-8"
       >
-        <div className="pl-0 lg:pl-28 xl:pl-40 pb-24">
+        <div className="pb-24 lg:col-span-1">
           <div className="mb-12">
             <h3 className="uppercase tracking-widest mb-2">Contact</h3>
             <a

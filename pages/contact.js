@@ -3,7 +3,7 @@ import Footer from "../components/footer/Footer";
 
 const ContactPages = () => {
   return (
-    <div>
+    <>
       <Head>
         <title>Gema Refantero | Contact me!</title>
         <meta
@@ -12,7 +12,7 @@ const ContactPages = () => {
         />
       </Head>
       <Footer />
-    </div>
+    </>
   );
 };
 

@@ -3,7 +3,7 @@ import Services from "../components/services/Services";
 
 const ServicesPage = () => {
   return (
-    <div>
+    <>
       <Head>
         <title>Gema Refantero | Services</title>
         <meta
@@ -12,7 +12,7 @@ const ServicesPage = () => {
         />
       </Head>
       <Services />
-    </div>
+    </>
   );
 };
 
