@@ -23,6 +23,14 @@ a {
   box-sizing: border-box;
 }
 
+.container-me {
+  @apply w-full sm:max-w-[640px] md:max-w-[768px] lg:max-w-[1024px] xl:max-w-[1280px];
+}
+
+.container-default {
+  @apply container mx-auto px-4;
+}
+
 #gradient-canvas {
   width: 100%;
   height: 100%;

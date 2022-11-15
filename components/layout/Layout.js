@@ -23,10 +23,11 @@ const Layout = (props) => {
         className={`bg-primary bg-opacity-40 text-txt-prime min-h-screen flex flex-col`}
       >
         {/* <Navigation items={navItems} /> */}
-        <div className="container mx-auto flex-[1] grid items-center overflow-hidden py-4">
-          <main className="">{props.children}</main>
-        </div>
-        <NewNav items={navItems} />
+        <NewNav items={navItems}>
+          <div className="container mx-auto flex-[1] grid items-center overflow-hidden py-4">
+            <main className="">{props.children}</main>
+          </div>
+        </NewNav>
       </div>
     </div>
   );

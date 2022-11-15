@@ -5,6 +5,7 @@ import Layout from "../components/layout/Layout";
 import { NotificationContextProvider } from "../store/notification-ctx";
 
 const navItems = [
+  { placeholder: "Home", link: "/" },
   { placeholder: "Services", link: "/services" },
   { placeholder: "Skills", link: "/skills" },
   { placeholder: "Portfolios", link: "/portfolios" },
