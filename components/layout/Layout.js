@@ -1,11 +1,12 @@
+import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { Gradient } from "../../lib/Gradient";
 import NavArrow from "../nav/NavArrow";
-import Navigation from "../nav/Navigation";
 import NavProgressBar from "../nav/NavProgressBar";
 
 const Layout = (props) => {
   const { navItems } = props;
+  const router = useRouter();
 
   // Create your instance
   const gradient = new Gradient();
@@ -27,7 +28,9 @@ const Layout = (props) => {
         <div className="container mx-auto flex-[1] overflow-y-auto grid items-center py-4">
           <main className="h-full">{props.children}</main>
         </div>
-        <NavProgressBar items={navItems} />
+        {router.pathname !== "/portfolios/[slug]" && (
+          <NavProgressBar items={navItems} />
+        )}
       </div>
     </div>
   );
