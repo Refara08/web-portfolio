@@ -1,14 +1,15 @@
-const SkillIconsTags = (props) => {
-  const { icons } = props;
+const SkillIconsTags = ({ icons, categories }) => {
   return (
-    <div className="grid grid-cols-3 place-items-start lg:place-items-center gap-4 lg:gap-8 lg:gap-y-12">
-      {icons.map((icon) => (
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 place-items-start lg:items-center gap-12 lg:gap-16 mb-24">
+      {categories.map((category) => (
         <div
-          key={icon.tag}
-          className="scale-75 hover:scale-90 lg:scale-100 lg:hover:scale-110 transition duration-300 flex flex-col md:flex-row justify-start items-center gap-4"
+          key={category.id}
+          className="col-span-1 w-full hover:scale-105 transition duration-300 flex flex-row justify-start items-center gap-4 lg:gap-3"
         >
-          <div>{icon.jsx}</div>
-          <p className="text-xl">{icon.tag}</p>
+          <div className="w-[50px] h-[50px] flex items-center justify-start">
+            <img src={category.icon.url} alt={category.title} />
+          </div>
+          <p className="text-xl">{category.title}</p>
         </div>
       ))}
     </div>

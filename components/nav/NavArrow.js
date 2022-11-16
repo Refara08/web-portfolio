@@ -6,6 +6,12 @@ import ArrowRight from "../ui/jsx/arrow-right";
 const NavArrow = ({ items }) => {
   const router = useRouter();
   const indexPage = items.findIndex((item) => item.link === router.pathname);
+  const isMainPage =
+    router.pathname === "/" ||
+    router.pathname === "/services" ||
+    router.pathname === "/skills" ||
+    router.pathname === "/portfolios" ||
+    router.pathname === "/contact";
 
   if (router.pathname === "/portfolios/[slug]") {
     return (
@@ -20,13 +26,7 @@ const NavArrow = ({ items }) => {
     );
   }
 
-  if (
-    router.pathname === "/" ||
-    router.pathname === "/services" ||
-    router.pathname === "/skills" ||
-    router.pathname === "/portfolios" ||
-    router.pathname === "/contact"
-  ) {
+  if (isMainPage) {
     return (
       <div
         className={`py-6 container-default flex ${

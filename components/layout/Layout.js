@@ -7,6 +7,12 @@ import NavProgressBar from "../nav/NavProgressBar";
 const Layout = (props) => {
   const { navItems } = props;
   const router = useRouter();
+  const isMainPage =
+    router.pathname === "/" ||
+    router.pathname === "/services" ||
+    router.pathname === "/skills" ||
+    router.pathname === "/portfolios" ||
+    router.pathname === "/contact";
 
   // Create your instance
   const gradient = new Gradient();
@@ -25,12 +31,10 @@ const Layout = (props) => {
         className={`bg-primary bg-opacity-40 text-txt-prime h-screen flex flex-col`}
       >
         <NavArrow items={navItems} />
-        <div className="container mx-auto flex-[1] overflow-y-auto grid items-center py-4">
+        <div className="container mx-auto flex-[1] overflow-y-auto hide-scrollbar grid items-center py-4">
           <main className="h-full">{props.children}</main>
         </div>
-        {router.pathname !== "/portfolios/[slug]" && (
-          <NavProgressBar items={navItems} />
-        )}
+        {isMainPage && <NavProgressBar items={navItems} />}
       </div>
     </div>
   );

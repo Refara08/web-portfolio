@@ -1,6 +1,6 @@
 const Experience = (props) => {
   return (
-    <>
+    <div>
       <h2 className="mb-2 text-base font-semibold tracking-wider">
         April 2022 - Present
       </h2>
@@ -19,7 +19,7 @@ const Experience = (props) => {
         invitation card templates as Reactjs reusable components, which include
         countdown, RSVP, and congratulation comments features.
       </p>
-    </>
+    </div>
   );
 };
 
