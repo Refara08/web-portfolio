@@ -1,14 +1,9 @@
 import Head from "next/head";
 import Skills from "../components/skills/Skills";
 
-import { getAllSkillIcons } from "../components/skills/skills-helper";
 import { getCategories } from "../lib/get-contents";
 
 const SkillsPage = ({ categories }) => {
-  const allIcons = getAllSkillIcons();
-
-  console.log(categories);
-
   return (
     <>
       <Head>
@@ -18,7 +13,7 @@ const SkillsPage = ({ categories }) => {
           content="Services I offered as web designer and web developer"
         />
       </Head>
-      <Skills icons={allIcons} categories={categories} />
+      <Skills categories={categories} />
     </>
   );
 };

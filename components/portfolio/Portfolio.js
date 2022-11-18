@@ -41,7 +41,7 @@ const Portfolio = (props) => {
       className="px-10 mb-12 h-full overflow-y-auto"
     >
       <h1 className="text-4xl font-bold mb-12">My Latest Projects</h1>
-      <ul className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-h-fit mb-12">
+      <ul className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-14 max-h-fit mb-12">
         {portfolioList.map((item, index) => (
           <PortfolioItem key={index} portfolio={item} />
         ))}

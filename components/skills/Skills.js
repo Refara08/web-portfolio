@@ -7,31 +7,8 @@ gsap.registerPlugin(ScrollTrigger);
 import Experience from "./Experience";
 import SkillIconsTags from "./SkillIconsTags";
 
-const Skills = ({ icons, categories }) => {
+const Skills = ({ categories }) => {
   const skillsRef = useRef();
-  // const q = gsap.utils.selector(skillsRef);
-
-  // useEffect(() => {
-  //   q(".skills-section").forEach((card) => {
-  //     gsap.fromTo(
-  //       card,
-  //       { y: 100, opacity: 0 },
-  //       {
-  //         y: 0,
-  //         opacity: 1,
-  //         duration: 3,
-  //         ease: "power3.out",
-  //         scrollTrigger: {
-  //           trigger: card,
-  //           scrub: 1,
-  //           once: true,
-  //           start: "top bottom",
-  //           end: "bottom bottom",
-  //         },
-  //       }
-  //     );
-  //   });
-  // }, [q]);
 
   return (
     <div ref={skillsRef} id={"skills"} className="px-10 h-full pt-12 pb-32">
@@ -43,7 +20,7 @@ const Skills = ({ icons, categories }) => {
           <p className="mb-8 text-2xl font-light tracking-widest">
             Languages and Tools
           </p>
-          <SkillIconsTags icons={icons} categories={categories} />
+          <SkillIconsTags categories={categories} />
         </div>
         <div className="skills-section">
           <Experience />
