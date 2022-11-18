@@ -15,7 +15,9 @@ const NavArrow = ({ items }) => {
 
   if (router.pathname === "/portfolios/[slug]") {
     return (
-      <div className={`py-6 container-default flex justify-start items-center`}>
+      <div
+        className={`py-4 lg:py-6 container-default flex justify-start items-center`}
+      >
         <Link href="/portfolios">
           <a className="flex items-center gap-3">
             <ArrowLeft size="2rem" />

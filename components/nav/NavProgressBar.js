@@ -5,7 +5,7 @@ const NavProgressBar = ({ items }) => {
   const router = useRouter();
 
   return (
-    <div className="py-4 px-12">
+    <div className="py-2 lg:py-4 px-12">
       <nav className="container-default flex justify-evenly items-center gap-4">
         {items.map((item, index) => (
           <Link href={item.link} key={index}>

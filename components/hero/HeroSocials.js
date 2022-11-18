@@ -7,7 +7,7 @@ const HeroSocials = (props) => {
   const sizeIcon = "1.75rem";
 
   return (
-    <div className="hidden lg:flex gap-4 socials">
+    <div className="flex gap-4 socials">
       <a
         target="_blank"
         href="https://twitter.com/GRefantero"

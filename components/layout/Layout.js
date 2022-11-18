@@ -30,11 +30,21 @@ const Layout = (props) => {
       <div
         className={`bg-primary bg-opacity-40 text-txt-prime h-screen flex flex-col`}
       >
-        <NavArrow items={navItems} />
+        <div className="hidden md:block">
+          <NavArrow items={navItems} />
+        </div>
+        <div className="block md:hidden">
+          {isMainPage && <NavProgressBar items={navItems} />}
+        </div>
         <div className="container mx-auto flex-[1] overflow-y-auto hide-scrollbar grid items-center py-4">
           <main className="h-full">{props.children}</main>
         </div>
-        {isMainPage && <NavProgressBar items={navItems} />}
+        <div className="block md:hidden">
+          <NavArrow items={navItems} />
+        </div>
+        <div className="hidden md:block">
+          {isMainPage && <NavProgressBar items={navItems} />}
+        </div>
       </div>
     </div>
   );
