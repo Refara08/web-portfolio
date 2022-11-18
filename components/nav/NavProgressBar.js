@@ -13,8 +13,8 @@ const NavProgressBar = ({ items }) => {
               <div
                 className={`w-full bg-txt-prime transition duration-300 ${
                   router.pathname === item.link
-                    ? "bg-opacity-100 h-[4px]"
-                    : "bg-opacity-50 h-[3px]"
+                    ? "bg-opacity-100 h-[5px]"
+                    : "bg-opacity-30 h-[3px]"
                 }`}
               />
             </a>
