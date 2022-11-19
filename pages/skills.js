@@ -14,6 +14,10 @@ const SkillsPage = ({ categories }) => {
         />
       </Head>
       <Skills categories={categories} />
+      {/* about you */}
+      {/* siapa gua? */}
+      {/* experience */}
+      {/* baru deh language */}
     </>
   );
 };

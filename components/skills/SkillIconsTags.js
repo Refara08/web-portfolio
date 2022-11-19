@@ -7,7 +7,6 @@ const SkillIconsTags = ({ category }) => {
     <div
       onMouseOver={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
-      key={category.id}
       className="relative col-span-1 w-full md:hover:scale-105 transition duration-300 flex flex-row justify-center md:justify-start items-center gap-4 lg:gap-3"
     >
       <div className="w-[50px] h-[50px] flex items-center justify-start">

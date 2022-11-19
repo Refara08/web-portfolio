@@ -22,7 +22,7 @@ const Skills = ({ categories }) => {
           </p>
           <div className="grid grid-cols-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 place-items-start lg:items-center gap-12 lg:gap-16 mb-24">
             {categories.map((category) => (
-              <SkillIconsTags category={category} />
+              <SkillIconsTags category={category} key={category.id} />
             ))}
           </div>
         </div>
