@@ -4,18 +4,38 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+import { getContentFragment } from "../../lib/get-contents";
 import Experience from "./Experience";
 import SkillIconsTags from "./SkillIconsTags";
 
-const Skills = ({ skills }) => {
+const Skills = ({ skills, experiences, about }) => {
   const skillsRef = useRef();
 
   return (
     <div ref={skillsRef} id={"skills"} className="px-10 h-full pt-12 pb-32">
-      <h1 className="text-4xl font-bold mb-12 uppercase tracking-widest">
+      <div className="mb-12">
+        <h1 className="text-4xl font-bold mb-6 uppercase tracking-widest">
+          About Me
+        </h1>
+        <div className="">
+          {about.aboutMe.raw.children.map((typeObj, index) => {
+            const children = typeObj.children.map((item, itemindex) =>
+              getContentFragment(itemindex, item.text, item)
+            );
+
+            return getContentFragment(index, children, typeObj, typeObj.type);
+          })}
+        </div>
+      </div>
+      <h1 className="text-4xl font-bold mb-6 uppercase tracking-widest">
         Skills & Experience
       </h1>
       <div className="">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {experiences.map((experience) => (
+            <Experience key={experience.id} experience={experience} />
+          ))}
+        </div>
         <div className="skills-section">
           <p className="mb-8 text-2xl font-light tracking-widest">
             Languages and Tools
@@ -25,9 +45,6 @@ const Skills = ({ skills }) => {
               <SkillIconsTags skill={skill} key={skill.id} />
             ))}
           </div>
-        </div>
-        <div className="skills-section">
-          <Experience />
         </div>
       </div>
     </div>
