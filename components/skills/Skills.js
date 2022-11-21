@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 import Experience from "./Experience";
 import SkillIconsTags from "./SkillIconsTags";
 
-const Skills = ({ categories }) => {
+const Skills = ({ skills }) => {
   const skillsRef = useRef();
 
   return (
@@ -21,8 +21,8 @@ const Skills = ({ categories }) => {
             Languages and Tools
           </p>
           <div className="grid grid-cols-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 place-items-start lg:items-center gap-12 lg:gap-16 mb-24">
-            {categories.map((category) => (
-              <SkillIconsTags category={category} key={category.id} />
+            {skills.map((skill) => (
+              <SkillIconsTags skill={skill} key={skill.id} />
             ))}
           </div>
         </div>

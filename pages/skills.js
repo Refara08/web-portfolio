@@ -1,9 +1,9 @@
 import Head from "next/head";
 import Skills from "../components/skills/Skills";
 
-import { getCategories } from "../lib/get-contents";
+import { getSkills } from "../lib/get-contents";
 
-const SkillsPage = ({ categories }) => {
+const SkillsPage = ({ skills }) => {
   return (
     <>
       <Head>
@@ -13,7 +13,7 @@ const SkillsPage = ({ categories }) => {
           content="Services I offered as web designer and web developer"
         />
       </Head>
-      <Skills categories={categories} />
+      <Skills skills={skills} />
       {/* about you */}
       {/* siapa gua? */}
       {/* experience */}
@@ -25,11 +25,11 @@ const SkillsPage = ({ categories }) => {
 export default SkillsPage;
 
 export const getStaticProps = async () => {
-  const categories = (await getCategories()) || [];
+  const skills = (await getSkills()) || [];
 
   return {
     props: {
-      categories,
+      skills,
     },
   };
 };
