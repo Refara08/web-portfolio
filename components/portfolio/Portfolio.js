@@ -1,47 +1,31 @@
 import { useRef, useEffect } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import gsap from "gsap";
 
 import PortfolioItem from "./PortfolioItem";
 
-const Portfolio = (props) => {
-  const { portfolioList } = props;
+const Portfolio = ({ portfolioList }) => {
   const portfolioRef = useRef();
   const q = gsap.utils.selector(portfolioRef);
 
-  // useEffect(() => {
-  //   q(".portfolio-details").forEach((item) => {
-  //     gsap.fromTo(
-  //       item,
-  //       { yPercent: 50, opacity: 0 },
-  //       {
-  //         yPercent: 0,
-  //         opacity: 1,
-  //         stagger: 0.2,
-  //         clearProps: "all",
-  //         scrollTrigger: {
-  //           trigger: item,
-  //           scrub: 1,
-  //           once: true,
-  //           start: "top bottom",
-  //           end: "bottom bottom",
-  //           // markers: true,
-  //         },
-  //       }
-  //     );
-  //   });
-  // }, [q]);
+  useEffect(() => {
+    gsap.fromTo(
+      q(".portfolio-details"),
+      { yPercent: 15, opacity: 0 },
+      {
+        yPercent: 0,
+        opacity: 1,
+        stagger: 0.1,
+      }
+    );
+  }, []);
 
   return (
-    <div
-      ref={portfolioRef}
-      id="portfolios"
-      className="px-10 mb-12 h-full overflow-y-auto"
-    >
+    <div id="portfolios" className="px-10 mb-12 h-full overflow-y-auto">
       <h1 className="text-4xl font-bold mb-12">My Latest Projects</h1>
-      <ul className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-14 max-h-fit mb-12">
+      <ul
+        ref={portfolioRef}
+        className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-14 max-h-fit mb-12"
+      >
         {portfolioList.map((item, index) => (
           <PortfolioItem key={index} portfolio={item} />
         ))}

@@ -12,7 +12,7 @@ const Skills = ({ skills, experiences, about }) => {
   const skillsRef = useRef();
 
   return (
-    <div ref={skillsRef} id={"skills"} className="px-10 h-full pt-12 pb-32">
+    <div ref={skillsRef} id={"skills"} className="px-10 h-full pb-32">
       <div className="mb-12">
         <h1 className="text-4xl font-bold mb-6 uppercase tracking-widest">
           About Me
@@ -31,7 +31,7 @@ const Skills = ({ skills, experiences, about }) => {
         Skills & Experience
       </h1>
       <div className="">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12">
           {experiences.map((experience) => (
             <Experience key={experience.id} experience={experience} />
           ))}
