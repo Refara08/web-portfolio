@@ -3,11 +3,8 @@ import Link from "next/link";
 import ArrowLeft from "../ui/jsx/arrow-left";
 import ArrowRight from "../ui/jsx/arrow-right";
 
-const NavArrow = ({ items }) => {
+const NavArrow = ({ items, indexPage }) => {
   const router = useRouter();
-  const indexPage = parseInt(
-    items.findIndex((item) => item.link.includes(router.asPath))
-  );
   const links = items.map((item) => item.link);
   const placeholders = items.map((item) => item.placeholder);
   const isMainPage =
