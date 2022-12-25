@@ -36,7 +36,7 @@ const PortfolioItem = (props) => {
                 width={"300px"}
                 height={"150px"}
                 layout={"responsive"}
-                className={`transition-all duration-1000 ${
+                className={`transition-all duration-1000 origin-bottom ${
                   isHover
                     ? "scale-105 translate-y-2"
                     : "scale-100 translate-y-0"

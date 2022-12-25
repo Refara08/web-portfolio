@@ -10,7 +10,7 @@ const PortfoliosPage = (props) => {
         <title>Gema Refantero | Portfolios</title>
         <meta
           name="description"
-          content="Services I offered as web designer and web developer"
+          content="Some of my projects as frontend and fullstack developer"
         />
       </Head>
       <Portfolio portfolioList={props.posts} />

@@ -14,10 +14,6 @@ const SkillsPage = ({ skills, experiences, about }) => {
         />
       </Head>
       <Skills skills={skills} experiences={experiences} about={about} />
-      {/* about you */}
-      {/* siapa gua? */}
-      {/* experience */}
-      {/* baru deh language */}
     </>
   );
 };

@@ -4,15 +4,14 @@ import { Gradient } from "../../lib/Gradient";
 import NavArrow from "../nav/NavArrow";
 import NavProgressBar from "../nav/NavProgressBar";
 
-const Layout = (props) => {
-  const { navItems } = props;
+const Layout = ({ navItems, children }) => {
   const router = useRouter();
   const isMainPage =
-    router.pathname === "/" ||
-    router.pathname === "/services" ||
-    router.pathname === "/skills" ||
-    router.pathname === "/portfolios" ||
-    router.pathname === "/contact";
+    router.pathname.includes("/") ||
+    router.pathname.includes("/services") ||
+    router.pathname.includes("/skills") ||
+    router.pathname.includes("/portfolios") ||
+    router.pathname.includes("/contact");
 
   // Create your instance
   const gradient = new Gradient();
@@ -37,7 +36,7 @@ const Layout = (props) => {
           {isMainPage && <NavProgressBar items={navItems} />}
         </div>
         <div className="container mx-auto flex-[1] overflow-y-auto hide-scrollbar grid items-center py-4">
-          <main className="h-full">{props.children}</main>
+          <main className="h-full">{children}</main>
         </div>
         <div className="block md:hidden">
           <NavArrow items={navItems} />

@@ -82,7 +82,7 @@ const ContactForm = () => {
             id="message"
             cols="50"
             rows="5"
-            placeholder="e.g. We need help to remake our company website"
+            placeholder="your message..."
             required
             value={enteredMessage}
             onChange={(event) => setEnteredMessage(event.target.value)}

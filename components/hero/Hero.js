@@ -3,7 +3,6 @@ import Image from "next/image";
 import gsap from "gsap";
 
 import HeroContent from "./HeroContent";
-import HeroSocials from "./HeroSocials";
 
 const Hero = () => {
   const [cursorTransform, setCursorTransform] = useState({
@@ -66,9 +65,6 @@ const Hero = () => {
     >
       <div className="hero-content flex flex-col justify-between pt-2 lg:pt-12 px-8 lg:px-12 gap-16 flex-[1]">
         <HeroContent />
-        <div className="hidden lg:block">
-          <HeroSocials />
-        </div>
       </div>
       <div
         onMouseEnter={() => setIsImageHovered(true)}
@@ -77,7 +73,7 @@ const Hero = () => {
           setCursorTransform({ x: `0px`, y: `0px` });
         }}
         onMouseMove={mouseMoveHandler}
-        className={`hidden lg:block w-fit aspect-square m-auto px-4 mix-blend-luminosity hover:mix-blend-normal grayscale hover:grayscale-0 transition-all duration-300 relative cursor-none`}
+        className={`hidden lg:block h-[75vh] aspect-square m-auto px-4 mix-blend-luminosity hover:mix-blend-normal grayscale hover:grayscale-0 transition-all duration-300 relative cursor-none`}
       >
         <p
           className={`absolute top-0 left-0 flex flex-col items-start z-20 ${
@@ -90,7 +86,7 @@ const Hero = () => {
         >
           <span>👋</span>
           <span className="text-xl bg-black text-white py-1 px-3 rounded-full">
-            helo!
+            hello!
           </span>
         </p>
         <Image
