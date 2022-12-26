@@ -21,6 +21,7 @@ function MyApp({ Component, pageProps }) {
             content="zgLW5BVxjtsqfD9wt3qJxDW0Kj8ppJEPhRh_y3Ej5W0"
           />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="mobile-web-app-capable" content="yes" />
         </Head>
         <Component {...pageProps} />
       </Layout>

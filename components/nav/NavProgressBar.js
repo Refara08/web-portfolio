@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const NavProgressBar = ({ items, indexPage }) => {
   return (
-    <div className="py-2 lg:py-4 px-12">
+    <div className="py-2 lg:py-4 px-4 lg:px-12">
       <nav className="container-default flex justify-evenly items-center gap-4">
         {items.map((item, index) => (
           <Link href={item.link} key={index}>
