@@ -1,8 +1,6 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 const NavProgressBar = ({ items, indexPage }) => {
-  const router = useRouter();
   return (
     <div className="py-2 lg:py-4 px-12">
       <nav className="container-default flex justify-evenly items-center gap-4">

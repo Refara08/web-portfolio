@@ -3,16 +3,10 @@ import Link from "next/link";
 import ArrowLeft from "../ui/jsx/arrow-left";
 import ArrowRight from "../ui/jsx/arrow-right";
 
-const NavArrow = ({ items, indexPage }) => {
+const NavArrow = ({ items, indexPage, isMainPage }) => {
   const router = useRouter();
   const links = items.map((item) => item.link);
   const placeholders = items.map((item) => item.placeholder);
-  const isMainPage =
-    router.pathname.includes("/") ||
-    router.pathname.includes("/services") ||
-    router.pathname.includes("/skills") ||
-    router.pathname.includes("/portfolios") ||
-    router.pathname.includes("/contact");
 
   if (router.pathname === "/portfolios/[slug]") {
     return (

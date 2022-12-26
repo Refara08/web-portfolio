@@ -11,7 +11,7 @@ const Layout = ({ navItems, children }) => {
   );
   const links = navItems.map((item) => item.link);
   const isMainPage =
-    router.pathname.includes("/") ||
+    router.pathname === "/" ||
     router.pathname.includes("/services") ||
     router.pathname.includes("/skills") ||
     router.pathname.includes("/portfolios") ||
@@ -66,7 +66,11 @@ const Layout = ({ navItems, children }) => {
         className={`bg-primary bg-opacity-40 text-txt-prime h-screen flex flex-col`}
       >
         <div className="hidden md:block">
-          <NavArrow indexPage={indexPage} items={navItems} />
+          <NavArrow
+            isMainPage={isMainPage}
+            indexPage={indexPage}
+            items={navItems}
+          />
         </div>
         <div className="block md:hidden">
           {isMainPage && (
@@ -83,7 +87,11 @@ const Layout = ({ navItems, children }) => {
           </main>
         </div>
         <div className="block md:hidden">
-          <NavArrow indexPage={indexPage} items={navItems} />
+          <NavArrow
+            isMainPage={isMainPage}
+            indexPage={indexPage}
+            items={navItems}
+          />
         </div>
         <div className="hidden md:block">
           {isMainPage && (
