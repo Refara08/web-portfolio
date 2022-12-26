@@ -31,7 +31,7 @@ const Layout = ({ navItems, children }) => {
   const touchActionStart = () => {
     const { xStart, xEnd } = position;
 
-    if (xStart === xEnd || Math.abs(xEnd - xStart) < 50) return;
+    if (xStart === xEnd || Math.abs(xEnd - xStart) < 100) return;
 
     if (xEnd > xStart) {
       if (indexPage !== 0) {
