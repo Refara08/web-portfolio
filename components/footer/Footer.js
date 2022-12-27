@@ -19,7 +19,7 @@ const Footer = () => {
       )}
       <div
         id="contact"
-        className="grid grid-cols-1 lg:grid-cols-3 pb-20 px-8 lg:w-[70%] mx-auto"
+        className="grid grid-cols-1 lg:grid-cols-3 pb-20 px-8 lg:w-[70%] mx-auto lg:mt-[10vh]"
       >
         <div className="pb-24 lg:col-span-1">
           <div className="mb-12">

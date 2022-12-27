@@ -11,11 +11,12 @@ const Layout = ({ navItems, children }) => {
   );
   const links = navItems.map((item) => item.link);
   const isMainPage =
-    router.pathname === "/" ||
-    router.pathname.includes("/services") ||
-    router.pathname.includes("/skills") ||
-    router.pathname.includes("/portfolios") ||
-    router.pathname.includes("/contact");
+    (router.pathname === "/" ||
+      router.pathname.includes("/services") ||
+      router.pathname.includes("/skills") ||
+      router.pathname.includes("/portfolios") ||
+      router.pathname.includes("/contact")) &&
+    router.pathname !== "/portfolios/[slug]";
 
   // Create your instance
   const gradient = new Gradient();
@@ -31,7 +32,12 @@ const Layout = ({ navItems, children }) => {
   const touchActionStart = () => {
     const { xStart, xEnd } = position;
 
-    if (xStart === xEnd || Math.abs(xEnd - xStart) < 100) return;
+    if (
+      xStart === xEnd ||
+      Math.abs(xEnd - xStart) < 100 ||
+      router.pathname === "/portfolios/[slug]"
+    )
+      return;
 
     if (xEnd > xStart) {
       if (indexPage !== 0) {

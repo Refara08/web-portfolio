@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Portfolio from "../../components/portfolio/Portfolio";
-
-import { getAllPost } from "../../lib/post-utils";
+import { getPosts } from "../../lib/get-contents";
 
 const PortfoliosPage = (props) => {
   return (
@@ -20,13 +19,12 @@ const PortfoliosPage = (props) => {
 
 export default PortfoliosPage;
 
-export const getStaticProps = () => {
-  const allPosts = getAllPost();
+export const getStaticProps = async () => {
+  const posts = (await getPosts()) || [];
 
   return {
     props: {
-      posts: allPosts,
+      posts,
     },
-    revalidate: 600,
   };
 };
