@@ -84,7 +84,7 @@ function PortfolioImgModal({
         {imageContent.length > 1 && (
           <RoundedArrowLeft
             size="2.2rem"
-            className="absolute left-3 top-1/2 hover:scale-125 transition duration-300 origin-right cursor-pointer z-10"
+            className="absolute left-3 top-1/2 hover:scale-125 transition duration-300 origin-right cursor-pointer z-10 mix-blend-difference"
             onClick={decreaseIndexHandler}
           />
         )}
@@ -99,7 +99,7 @@ function PortfolioImgModal({
         {imageContent.length > 1 && (
           <RoundedArrowRight
             size="2.2rem"
-            className="absolute right-3 top-1/2 hover:scale-125 transition duration-300 origin-left cursor-pointer z-10"
+            className="absolute right-3 top-1/2 hover:scale-125 transition duration-300 origin-left cursor-pointer z-10 mix-blend-difference"
             onClick={increaseIndexHandler}
           />
         )}

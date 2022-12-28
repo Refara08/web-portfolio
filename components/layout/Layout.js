@@ -83,7 +83,7 @@ const Layout = ({ navItems, children }) => {
             <NavProgressBar indexPage={indexPage} items={navItems} />
           )}
         </div>
-        <div className="container mx-auto flex-[1] overflow-y-auto hide-scrollbar grid items-center py-4">
+        <div className="container mx-auto flex-[1] overflow-y-auto grid items-center py-4">
           <main
             onTouchStart={touchStartHandler}
             onTouchEnd={touchEndHandler}
