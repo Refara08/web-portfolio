@@ -93,6 +93,7 @@ const PorfolioDetails = ({ post, nextPost, previousPost }) => {
             className="py-3 px-7 bg-black rounded-full text-white hover:bg-green-200 hover:text-black hover:shadow-xl transition duration-300"
             href={webLink}
             target={"_blank"}
+            rel="noopener noreferrer"
           >
             Visit Website
           </a>
@@ -101,6 +102,7 @@ const PorfolioDetails = ({ post, nextPost, previousPost }) => {
               className="py-3 px-7 bg-white rounded-full text-black hover:bg-green-900 hover:text-white hover:shadow-xl transition duration-300"
               href={codeLink}
               target={"_blank"}
+              rel="noopener noreferrer"
             >
               Review Code
             </a>
