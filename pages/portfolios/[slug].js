@@ -3,8 +3,6 @@ import PorfolioDetails from "../../components/portfolio/PortfolioDetails";
 import { getPostDetails, getPosts, getPostsSlug } from "../../lib/get-contents";
 
 const PortfolioDetailsPage = ({ post, nextPost, previousPost }) => {
-  console.log(nextPost);
-  console.log(previousPost);
   return (
     <>
       <Head>

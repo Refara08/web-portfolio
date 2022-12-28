@@ -9,13 +9,17 @@ const Experience = ({ experience }) => {
       <h3 className="mb-4 text-2xl font-light tracking-widest">
         {experience.jobPosition}
       </h3>
-      {experience.experienceDesc.raw.children.map((typeObj, index) => {
+      {/* {experience.experienceDesc.raw.children.map((typeObj, index) => {
         const children = typeObj.children.map((item, itemindex) =>
           getContentFragment(itemindex, item.text, item)
         );
 
         return getContentFragment(index, children, typeObj, typeObj.type);
-      })}
+      })} */}
+      <div
+        className="details-page-content"
+        dangerouslySetInnerHTML={{ __html: experience.experienceDesc.html }}
+      />
     </div>
   );
 };

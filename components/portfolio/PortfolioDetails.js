@@ -45,7 +45,7 @@ const PorfolioDetails = ({ post, nextPost, previousPost }) => {
   return (
     <div className="relative h-full flex flex-col justify-start gap-0 pt-[50vw] sm:pt-0">
       <div className="grid grid-cols-1 lg:grid-cols-7 gap-8 items-center px-8">
-        <div className="lg:col-span-4 fixed top-0 left-0 sm:relative w-full shadow-xl select-none overflow-hidden">
+        <div className="bg-black lg:col-span-4 fixed top-0 left-0 sm:relative w-full shadow-xl select-none overflow-hidden z-10 lg:z-0">
           {imageContent.length > 1 && (
             <RoundedArrowLeft
               size="2.2rem"
@@ -74,7 +74,7 @@ const PorfolioDetails = ({ post, nextPost, previousPost }) => {
             className="absolute bottom-5 right-5 cursor-pointer hidden md:block"
           />
         </div>
-        <div className="lg:col-span-3 h-[450px] overflow-y-auto">
+        <div className="lg:col-span-3 h-[450px] overflow-y-auto px-4 lg:px-6">
           <h1 className="text-5xl font-bold mb-12">{title}</h1>
           <div
             className="details-page-content"
@@ -89,21 +89,21 @@ const PorfolioDetails = ({ post, nextPost, previousPost }) => {
           ))}
         </div>
         <div className="lg:col-span-3 flex justify-start items-center gap-4 flex-wrap mt-12">
-          <button
+          <a
             className="py-3 px-7 bg-black rounded-full text-white hover:bg-green-200 hover:text-black hover:shadow-xl transition duration-300"
             href={webLink}
             target={"_blank"}
           >
             Visit Website
-          </button>
+          </a>
           {codeLink && (
-            <button
+            <a
               className="py-3 px-7 bg-white rounded-full text-black hover:bg-green-900 hover:text-white hover:shadow-xl transition duration-300"
               href={codeLink}
               target={"_blank"}
             >
               Review Code
-            </button>
+            </a>
           )}
         </div>
       </div>
