@@ -25,21 +25,25 @@ const NavDesktop = ({ items, indexPage, isMainPage }) => {
   if (isMainPage) {
     return (
       <div
-        className={`py-4 container-default flex gap-x-6 justify-between items-center`}
+        className={`py-4 container-default flex gap-x-6 justify-around items-center`}
       >
-        <Link href={indexPage !== 0 ? links[indexPage - 1] : links[0]}>
+        <Link
+          href={
+            indexPage !== 0 ? links[indexPage - 1] : links[items.length - 1]
+          }
+        >
           <a
-            className={`flex items-center gap-3 hover:scale-110 origin-right transition duration-300 ${
-              indexPage === 0
-                ? "opacity-0 cursor-default pointer-events-none"
-                : "opacity-1"
-            }`}
+            className={`flex items-center gap-3 hover:scale-110 origin-right transition duration-300`}
           >
             <ArrowLeft size="2rem" />
-            <h4>{placeholders[indexPage - 1]}</h4>
+            <h4>
+              {indexPage !== 0
+                ? placeholders[indexPage - 1]
+                : placeholders[items.length - 1]}
+            </h4>
           </a>
         </Link>
-        <nav className="flex-[1] flex justify-evenly items-center gap-4">
+        <nav className="w-[50vw] flex justify-evenly items-center gap-4">
           {items.map((item, index) => (
             <ProgressBarOnly
               item={item}
