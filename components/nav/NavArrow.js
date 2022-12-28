@@ -12,7 +12,7 @@ const NavArrow = ({ items, indexPage, isMainPage }) => {
     return (
       <div className={`py-4 container-default flex justify-start items-center`}>
         <Link href="/portfolios">
-          <a className="flex items-center gap-3">
+          <a className="flex items-center gap-3 hover:scale-110 origin-right transition duration-300">
             <ArrowLeft size="2rem" />
             <h4>All portfolios</h4>
           </a>
@@ -34,7 +34,7 @@ const NavArrow = ({ items, indexPage, isMainPage }) => {
       >
         {indexPage !== 0 && (
           <Link href={links[indexPage - 1]}>
-            <a className="flex items-center gap-3">
+            <a className="flex items-center gap-3 hover:scale-110 origin-right transition duration-300">
               <ArrowLeft size="2rem" />
               <h4>{placeholders[indexPage - 1]}</h4>
             </a>
@@ -42,7 +42,7 @@ const NavArrow = ({ items, indexPage, isMainPage }) => {
         )}
         {indexPage !== items.length - 1 && (
           <Link href={links[indexPage + 1]}>
-            <a className="flex items-center gap-3">
+            <a className="flex items-center gap-3 hover:scale-110 origin-left transition duration-300">
               <h4>{placeholders[indexPage + 1]}</h4>
               <ArrowRight size="2rem" />
             </a>

@@ -6,7 +6,7 @@ import { NotificationContextProvider } from "../store/notification-ctx";
 
 const navItems = [
   { placeholder: "Home", link: "/" },
-  { placeholder: "Portfolios", link: "/portfolios#portfolios" },
+  { placeholder: "Projects", link: "/portfolios#portfolios" },
   { placeholder: "Skills", link: "/skills#skills" },
   { placeholder: "Contact", link: "/contact#contact" },
 ];

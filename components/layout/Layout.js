@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { Gradient } from "../../lib/Gradient";
 import NavArrow from "../nav/NavArrow";
+import NavDesktop from "../nav/NavDesktop";
 import NavProgressBar from "../nav/NavProgressBar";
 
 const Layout = ({ navItems, children }) => {
@@ -18,6 +19,7 @@ const Layout = ({ navItems, children }) => {
       router.pathname.includes("/contact")) &&
     router.pathname !== "/portfolios/[slug]";
 
+  //animated background settings ==================================
   // Create your instance
   const gradient = new Gradient();
 
@@ -26,7 +28,7 @@ const Layout = ({ navItems, children }) => {
     gradient.initGradient("#gradient-canvas");
   }, []);
 
-  // navigation with touch events
+  // navigation with touch events==================================
   let position = { xStart: 0, xEnd: 0 };
 
   const touchActionStart = () => {
@@ -72,7 +74,7 @@ const Layout = ({ navItems, children }) => {
         className={`bg-primary bg-opacity-40 text-txt-prime h-screen flex flex-col`}
       >
         <div className="hidden md:block">
-          <NavArrow
+          <NavDesktop
             isMainPage={isMainPage}
             indexPage={indexPage}
             items={navItems}
@@ -99,11 +101,11 @@ const Layout = ({ navItems, children }) => {
             items={navItems}
           />
         </div>
-        <div className="hidden md:block">
+        {/* <div className="hidden md:block">
           {isMainPage && (
             <NavProgressBar indexPage={indexPage} items={navItems} />
           )}
-        </div>
+        </div> */}
       </div>
     </div>
   );
