@@ -88,9 +88,7 @@ const ContactForm = () => {
             onChange={(event) => setEnteredMessage(event.target.value)}
           />
         </div>
-        <button className="font-bold tracking-wider bg-white hover:bg-primary text-black hover:text-white py-3 px-6 mt-4 rounded-full transition-all duration-300">
-          send
-        </button>
+        <button className="button-default">send</button>
       </form>
     </div>
   );

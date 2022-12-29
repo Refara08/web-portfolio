@@ -13,7 +13,7 @@ const NavDesktop = ({ items, indexPage, isMainPage }) => {
     return (
       <div className={`py-4 container-default flex justify-start items-center`}>
         <Link href="/portfolios">
-          <a className="flex items-center gap-3 hover:scale-110 origin-right transition duration-300">
+          <a className="flex items-center gap-3 py-3 px-5 button-nav-left">
             <ArrowLeft size="2rem" />
             <h4>All portfolios</h4>
           </a>
@@ -32,9 +32,7 @@ const NavDesktop = ({ items, indexPage, isMainPage }) => {
             indexPage !== 0 ? links[indexPage - 1] : links[items.length - 1]
           }
         >
-          <a
-            className={`flex items-center gap-3 hover:scale-110 origin-right transition duration-300`}
-          >
+          <a className={`flex items-center gap-3 py-3 px-5 button-nav-left`}>
             <ArrowLeft size="2rem" />
             <h4>
               {indexPage !== 0
@@ -58,9 +56,7 @@ const NavDesktop = ({ items, indexPage, isMainPage }) => {
             indexPage !== items.length - 1 ? links[indexPage + 1] : links[0]
           }
         >
-          <a
-            className={`flex items-center gap-3 hover:scale-110 origin-left transition duration-300`}
-          >
+          <a className={`flex items-center gap-3 py-3 px-5 button-nav-right`}>
             <h4>
               {indexPage !== items.length - 1
                 ? placeholders[indexPage + 1]

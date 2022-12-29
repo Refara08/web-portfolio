@@ -104,3 +104,15 @@ a {
 .input-group textarea {
   @apply bg-primary py-3 px-4 rounded-lg;
 }
+
+.button-default {
+  @apply py-3 px-5 bg-white text-black rounded-full hover:bg-primary hover:text-white transition duration-300 font-bold mt-4;
+}
+
+.button-nav-left {
+  @apply hover:bg-white hover:text-black transition duration-300 hover:translate-x-5;
+}
+
+.button-nav-right {
+  @apply hover:bg-white hover:text-black transition duration-300 hover:-translate-x-5;
+}

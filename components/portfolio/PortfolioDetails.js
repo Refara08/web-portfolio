@@ -126,7 +126,7 @@ const PorfolioDetails = ({ post, nextPost, previousPost }) => {
   const PortfolioDetailsNextPreviousPost = (
     <div className="w-full grid grid-cols-2 md:flex md:justify-between px-8 lg:px-0 pt-24 mt-6 ">
       <Link href={`/portfolios/${previousPost.slug}`} legacyBehavior>
-        <a className=" flex flex-col md:flex-row items-start md:items-center gap-4 p-4 hover:bg-white hover:text-black transition duration-300 hover:translate-x-5">
+        <a className="flex flex-col md:flex-row items-start md:items-center gap-4 p-4 button-nav-left">
           <ArrowLeft size="2.2rem" />
           <div className="flex flex-col">
             <span>go to previous post</span>
@@ -135,7 +135,7 @@ const PorfolioDetails = ({ post, nextPost, previousPost }) => {
         </a>
       </Link>
       <Link href={`/portfolios/${nextPost.slug}`} legacyBehavior>
-        <a className=" flex flex-col md:flex-row-reverse items-end md:items-center gap-4 p-4 hover:bg-white hover:text-black transition duration-300 hover:-translate-x-5">
+        <a className=" flex flex-col md:flex-row-reverse items-end md:items-center gap-4 p-4 button-nav-right">
           <ArrowRight size="2.2rem" />
           <div className="flex flex-col justify-end text-right">
             <span>go to next post</span>
