@@ -8,7 +8,7 @@ import { getContentFragment } from "../../lib/get-contents";
 import Experience from "./Experience";
 import SkillIconsTags from "./SkillIconsTags";
 
-const Skills = ({ skills, experiences, about }) => {
+const Skills = ({ skills, experiences, about, cvLink }) => {
   const skillsRef = useRef();
 
   //components =============================================
@@ -27,7 +27,7 @@ const Skills = ({ skills, experiences, about }) => {
         })}
       </div>
       <a
-        href="https://drive.google.com/file/d/1Q93NUSyBu89FwRbWxbZewG0x1yPO5y2H/view?usp=share_link"
+        href={cvLink}
         target="_blank"
         rel="noopener noreferrer"
         className="py-3 px-5 bg-white text-black hover:bg-black hover:text-white rounded-full font-bold transition duration-300"
