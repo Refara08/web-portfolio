@@ -7,11 +7,8 @@ const SkillsPage = ({ skills, experiences, about }) => {
   return (
     <>
       <Head>
-        <title>Gema Refantero | Services</title>
-        <meta
-          name="description"
-          content="Services I offered as web designer and web developer"
-        />
+        <title>Gema Refantero | skill and experiences</title>
+        <meta name="description" content="All skills and my experiences" />
       </Head>
       <Skills skills={skills} experiences={experiences} about={about} />
     </>
@@ -31,5 +28,6 @@ export const getStaticProps = async () => {
       experiences,
       about: abouts[0],
     },
+    revalidate: 60,
   };
 };

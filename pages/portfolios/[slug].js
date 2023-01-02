@@ -38,7 +38,7 @@ export const getStaticProps = async (context) => {
       nextPost: postsSlug[nextPostIndex],
       previousPost: postsSlug[previousPostIndex],
     },
-    revalidate: 600,
+    revalidate: 60,
   };
 };
 
