@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Provider from "@/components/provider";
+import { cn } from "@/lib/utils";
+import { ThemeToggler } from "@/components/theme-toggler";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,8 +18,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={cn(inter.className)}>
+        <Provider>{children}</Provider>
+      </body>
     </html>
   );
 }

@@ -3,13 +3,7 @@ interface ExperimentLayoutProps {
 }
 
 const ExprimentLayout = ({ children }: ExperimentLayoutProps) => {
-  return (
-    <main>
-      <p>header</p>
-      {children}
-      <p>footer</p>
-    </main>
-  );
+  return <main className="h-full">{children}</main>;
 };
 
 export default ExprimentLayout;

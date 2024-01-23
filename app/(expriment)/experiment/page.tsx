@@ -1,7 +1,36 @@
+import { buttonVariants } from "@/components/ui/button";
+import { MoveRight } from "lucide-react";
+import Link from "next/link";
 import React from "react";
 
+const LINKS = ["paralax-scroll"];
+
 const ExperimentPage = () => {
-  return <div>ExperimentPage</div>;
+  return (
+    <div className="h-full w-full">
+      <div className="flex justify-center pt-[20vh]">
+        <div className="text-center">
+          <p className="text-lg">The</p>
+          <h1 className="text-6xl font-semibold">Experiments</h1>
+          <div className="mt-12 flex flex-col">
+            {LINKS.map((l) => (
+              <Link
+                key={l}
+                href={`/experiment/${l}`}
+                className={buttonVariants({
+                  variant: "link",
+                  className: "group",
+                })}
+              >
+                go to {l}
+                <MoveRight className="text-foreground ml-2 group-hover:ml-4 transition-all" />
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default ExperimentPage;
