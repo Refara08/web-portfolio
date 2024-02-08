@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Provider from "@/components/provider";
+import Provider from "@/components/providers/provider";
 import { cn } from "@/lib/utils";
 import { ThemeToggler } from "@/components/theme-toggler";
 

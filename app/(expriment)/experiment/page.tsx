@@ -3,7 +3,16 @@ import { MoveRight } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
-const LINKS = ["paralax-scroll"];
+const LINKS = [
+  {
+    title: "Paralax scroll (unfinished)",
+    slug: "paralax-scroll",
+  },
+  {
+    title: "Zoom Paralax",
+    slug: "zoom-paralax",
+  },
+];
 
 const ExperimentPage = () => {
   return (
@@ -15,14 +24,14 @@ const ExperimentPage = () => {
           <div className="mt-12 flex flex-col">
             {LINKS.map((l) => (
               <Link
-                key={l}
-                href={`/experiment/${l}`}
+                key={l.slug}
+                href={`/experiment/${l.slug}`}
                 className={buttonVariants({
                   variant: "link",
                   className: "group",
                 })}
               >
-                go to {l}
+                go to {l.title}
                 <MoveRight className="text-foreground ml-2 group-hover:ml-4 transition-all" />
               </Link>
             ))}

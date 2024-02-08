@@ -1,22 +1,7 @@
-"use client";
-
-import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
+import LenisScroll from "@/components/providers/lenis-scroll";
 
 const ParalaxScrolLayout = ({ children }: { children: React.ReactNode }) => {
-  const lenis = useLenis(({ scroll }) => {
-    // called every scroll
-  });
-
-  return (
-    <ReactLenis
-      root
-      options={{
-        easing: (t: number) => -(Math.cos(Math.PI * t) - 1) / 2,
-      }}
-    >
-      {children}
-    </ReactLenis>
-  );
+  return <LenisScroll>{children}</LenisScroll>;
 };
 
 export default ParalaxScrolLayout;
