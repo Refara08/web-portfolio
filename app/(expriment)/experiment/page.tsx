@@ -12,6 +12,10 @@ const LINKS = [
     title: "Zoom Paralax",
     slug: "zoom-paralax",
   },
+  {
+    title: "Cool Hamburger Menu",
+    slug: "cool-hamburger-menu",
+  },
 ];
 
 const ExperimentPage = () => {
